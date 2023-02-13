@@ -23,7 +23,9 @@ adminRouter.route('/auth/logout')
 
 // Quản lý người dùng
 adminRouter.route('/manage/user')
-    .get(adminController.authMiddleware, adminController.findAllUser);
+    // .get(adminController.authMiddleware, adminController.findAllUser);
+    .get(adminController.findAllUser);
+
 
 adminRouter.route('/manage/user/:id')
     .put(adminController.authMiddleware, adminController.block_activateAccountUser);

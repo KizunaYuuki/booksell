@@ -24,12 +24,12 @@ const UserSchema = new Schema({
         maxLenght: 10,
         required: [true, "Why no phone number"],
     },
-    address: [Address.AddressSchema],
+    // address: [Address.AddressSchema],
     password: { 
         type: String, 
         required: [true, "Why no password?"], 
     },
-    order: [Order.OrderSchema],
+    // order: [Order.OrderSchema],
     statusUser: {
         type: Boolean,
         default: true,

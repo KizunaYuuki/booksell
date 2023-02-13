@@ -14,10 +14,11 @@ exports.registerUser = function (req, res, next) {
             order: req.body.order,
         });
         if (error) return error;
-        
         user.save();
+        res.send(user)
         // register account complete
+        
         console.log("Register account complete");
     })
-    next()
+    
 }
