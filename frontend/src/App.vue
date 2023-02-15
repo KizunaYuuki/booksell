@@ -1,75 +1,25 @@
-<!-- <script>
-import axios from 'axios'
-
-export default {
-  data() {
-    return {
-      posts: []
-    }
-  },
-  mounted() {
-    axios
-      .get('http://localhost:3000/admin/manage/user')
-      .then((response) => {
-        this.posts = response.data
-        console.log(this.posts)
-      })
-  }
-}
-</script> -->
-
-
-<!-- <template>
-  <div v-for="post in posts" :key="post.id">
-    <h2>{{ post._id }} {{ post.phoneNumber }}</h2>
-    <p>{{ post.address[0].description }}</p>
-  </div>
-</template> -->
-
-<script>
-import axios from 'axios'
-
-export default {
-  data() {
-    return {
-      postData: {
-        firstname: '',
-        phoneNumber: '',
-        password: '',
-      }
-    }
-  },
-  methods: {
-  	createPost() {
-		axios
-		  .post('http://localhost:3000/user/register', this.postData)
-		  .then((response) => console.log(response))
-	}
-  }
-}
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from './components/TheWelcome.vue'
+import LoginForm from './components/loginAdmin.vue'
 </script>
 
 <template>
-  <section>
-    <form @submit.prevent="createPost">
-      <div>
-        <label for="firstname">Firstname</label>
-        <input type="text" id="firstname" v-model="postData.firstname">
-      </div>
-      <div>
-        <label for="phoneNumber">phoneNumber: </label>
-        <input type="text" id="phoneNumber" v-model="postData.phoneNumber">
-      </div>
-      <div>
-        <label for="password">Password </label>
-        <input type="password" id="password" v-model="postData.password">
-      </div>
-      <button>Create Post</button>
-    </form>
-  </section>
+  <header>
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+
+    <div class="wrapper">
+      <!-- <HelloWorld msg="You did it!" /> -->
+      <LoginForm />
+    </div>
+  </header>
+
+  <main>
+    <!-- <TheWelcome /> -->
+  </main>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 header {
   line-height: 1.5;
 }
@@ -96,4 +46,4 @@ header {
     flex-wrap: wrap;
   }
 }
-</style>
+</style> -->

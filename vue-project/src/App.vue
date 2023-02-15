@@ -1,6 +1,53 @@
+<!-- 
+<script>
+import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      postData: {
+        firstname: '',
+        phoneNumber: '',
+        password: '',
+      }
+    }
+  },
+  methods: {
+  	createPost() {
+		axios
+		  .post('http://localhost:3000/user/register', this.postData)
+		  .then((response) => console.log(response))
+	}
+  }
+}
+</script>
+
+<template>
+  <section>
+    <form @submit.prevent="createPost">
+      <div>
+        <label for="firstname">Firstname</label>
+        <input type="text" id="firstname" v-model="postData.firstname">
+      </div>
+      <div>
+        <label for="phoneNumber">phoneNumber: </label>
+        <input type="text" id="phoneNumber" v-model="postData.phoneNumber">
+      </div>
+      <div>
+        <label for="password">Password </label>
+        <input type="password" id="password" v-model="postData.password">
+      </div>
+      <button>Create Post</button>
+    </form>
+  </section>
+</template> -->
+
+
+
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import SignUpUser from './components/SignupUser.vue'
 
 // Practice
 import { ref, reactive, computed } from 'vue'
@@ -82,10 +129,10 @@ const ok = null
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-    </div>
+    </div> -->
 
 
     <!-- Practice vue -->
@@ -95,7 +142,7 @@ const ok = null
     <span>{{ publishedBooksMessage }}</span>
     <span>{{ ok ? 'YES' : 'NO' }}</span>
     <h1>{{ fullName }}</h1> -->
-    <div :class="[classObject, classtemp]" :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }">Test</div>
+    <!-- <div :class="[classObject, classtemp]" :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }">Test</div> -->
 
 
 
@@ -103,7 +150,8 @@ const ok = null
   </header>
 
   <main>
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
+    <SignUpUser />
   </main>
 </template>
 
