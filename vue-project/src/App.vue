@@ -48,6 +48,7 @@ export default {
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import SignUpUser from './components/SignupUser.vue'
+import ManageUser from './components/ManageUser.vue'
 
 // Practice
 import { ref, reactive, computed } from 'vue'
@@ -151,7 +152,8 @@ const ok = null
 
   <main>
     <!-- <TheWelcome /> -->
-    <SignUpUser />
+    <!-- <SignUpUser /> -->
+    <!-- <ManageUser /> -->
   </main>
 </template>
 

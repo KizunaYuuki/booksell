@@ -1,76 +1,177 @@
 <template>
-    <h1>Signup</h1>
+    <!-- <h1>Signup</h1> -->
     <!-- <button type="button" class="btn btn-danger">Danger</button> -->
-    <Form>
-        <div class="form-group">
-            <!-- <label for="phone">Số điện thoại</label> -->
-            <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại"/>
-            <p class="fw-lighter">Số điện thoại có 10 chữ số, là giá trị bắt buộc</p>
-            <ErrorMessage name="phone" class="error-feedback" />
+    <Form class="container form">
+        <div class="row">
+            <!-- <div class="col"></div> -->
+            <div class="col">
+
+
+                        <!-- phone -->
+                <div class="form-group form-floating">
+                    <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
+                    <label for="phone">Số điện thoại</label>
+                    <p class="fw-lighter">Số điện thoại có 10 chữ số, là giá trị bắt buộc</p>
+                    <ErrorMessage name="phone" class="error-feedback" />
+                </div>
+
+
+                <!-- name -->
+                <div class="form-group form-floating">
+                    <Field name="name" type="text" class="form-control" placeholder="Tên người dùng" />
+                    <label for="name">Tên người dùng</label>
+                    <p class="fw-lighter">Sử dụng 3 ký tự trở lên, tối đa 30 ký tự</p>
+                    <ErrorMessage name="name" class="error-feedback" />
+                </div>
+
+
+                <!-- password -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <Field name="password" v-bind:type="showPassword ? 'text' : 'password'" class="form-control"
+                                placeholder="Mật khẩu" />
+                            <label for="password">Mật khẩu</label>
+                        </div>
+                        <!-- Sau khi xử lý summit sẽ đổi thành button  -->
+                        <span @click="showPasswordF" class="input-group-text">{{ msgShowPassword }}</span>
+                    </div>
+                    <p class="fw-lighter">Sử dụng 4 ký tự trở lên</p>
+                    <ErrorMessage name="password" class="error-feedback" />
+                </div>
+
+
+                <!-- password confirm -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <Field name="password-again" type="password" class="form-control" placeholder="Xác nhận mật khẩu" />
+                            <label for="password-again">Xác nhận</label>
+                        </div>
+                        <span @click="showPasswordF" class="input-group-text">{{ msgShowPassword }}</span>
+                    </div>
+                    <p class="fw-lighter">Phải khớp với mật khẩu ở phía trên</p>
+                    <ErrorMessage name="password-again" class="error-feedback" />
+                </div>
+
+
+                <!-- city -->
+                <!-- <div class="form-group form-floating mb-3">
+                    <select required class="form-select" aria-label="">
+                        <option value="">Hãy chọn một Tỉnh/Thành Phố</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                        <option value="Vĩnh Long">Vĩnh Long</option>
+                    </select>
+                    <label for="city">Tỉnh/Thành Phố</label>
+                </div> -->
+
+
+                <!-- district -->
+                <!-- <div class="form-group form-floating mb-3">
+                    <select class="form-select" aria-label="">
+                        <option value="">Hãy chọn một Quận/Huyện</option>
+                        <option value="Phụng Hiệp">Phụng Hiệp</option>
+                        <option value="Châu Thành">Châu Thành</option>
+                    </select>
+                    <label for="district">Quận/Huyện</label>
+                </div> -->
+
+
+                <!-- ward -->
+                <!-- <div class="form-group form-floating mb-3">
+                    <select class="form-select" aria-label="">
+                        <option value="">Hãy chọn một Xã/Phường</option>
+                        <option value="Thạnh Hoà">Thạnh Hoà</option>
+                        <option value="Hoà An">Hoà An</option>
+                    </select>
+                    <label for="ward">Xã/Phường</label>
+                </div> -->
+
+
+                <!-- streetName -->
+                <!-- <div class="form-group form-floating mb-3">
+                    <Field name="streetName" type="text" class="form-control" placeholder="Tên đường" />
+                    <label for="streetName">Tên đường</label>
+                    <ErrorMessage name="streetName" class="error-feedback" />
+                </div> -->
+
+
+                <!-- register -->
+                <div class="form-group mb-3">
+                    <button type="button" class="btn btn-outline-primary">Đăng ký</button>
+                </div>
+
+
+                <!-- login -->
+                <div class="form-group">
+                    <button type="button" class="btn btn-outline-primary">Đăng nhập</button>
+                </div>
+
+
+            </div>
+
+
+
+            <!-- <div class="col"><img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg"/></div> -->
+            <!-- <div class="col"></div> -->
         </div>
-        <div class="form-group">
-            <!-- <label for="name">Tên người dùng</label> -->
-            <Field name="name" type="text" class="form-control" placeholder="Tên người dùng"/>
-            <p class="fw-lighter">Sử dụng 3 ký tự trở lên, tối đa 30 ký tự</p>
-            <ErrorMessage name="name" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <!-- <label for="password">Mật khẩu</label> -->
-            <Field name="password" type="password" class="form-control" placeholder="Mật khẩu"/>
-            <p class="fw-lighter">Sử dụng 4 ký tự trở lên</p>
-            <ErrorMessage name="password" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <!-- <label for="password-again">Xác nhận</label> -->
-            <Field name="password-again" type="password" class="form-control" placeholder="Xác nhận mật khẩu"/>
-            <p class="fw-lighter">Phải khớp với mật khẩu ở phía trên</p>
-            <ErrorMessage name="password-again" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <label for="city">Tỉnh/Thành Phố</label> 
-            <select class="form-select" aria-label="">
-                <option value="Cần Thơ">Cần Thơ</option>
-                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                <option value="Vĩnh Long">Vĩnh Long</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="district">Quận/Huyện</label>
-            <select class="form-select" aria-label="">
-                <option value="Phụng Hiệp">Phụng Hiệp</option>
-                <option value="Châu Thành">Châu Thành</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="ward">Xã/Phường</label>
-            <select class="form-select" aria-label="">
-                <option value="Thạnh Hoà">Thạnh Hoà</option>
-                <option value="Hoà An">Hoà An</option>
-            </select>
-        </div>
-        <div class="form-group">
-            
-            <Field name="streetName" type="text" class="form-control" placeholder="Tên đường"/>
-            <ErrorMessage name="streetName" class="error-feedback"/>
-        </div>
-        <div class="form-group">
-            <button type="button" class="btn btn-outline-primary">Đăng ký</button>
-        </div>
-        <div class="form-group">
-            <button type="button" class="btn btn-outline-primary">Đăng nhập</button>
-        </div>
+
+
+        
+
     </Form>
+
+
+    <!-- <div class="container mb-3">
+        <button>Trợ giúp</button>
+        <button>Bảo mật</button>
+        <button>Điều khoản</button>
+    </div> -->
+
 </template>
+
+
 <script>
 import { Form, Field, ErrorMessage } from "vee-validate";
 export default {
+
+
     components: {
         Form,
         Field,
         ErrorMessage,
+    },
+
+
+    data() {
+        return {
+            showPassword: false,
+            msgShowPassword: 'Hiển thị'
+        }
+    },
+
+
+
+    methods: {
+        showPasswordF() {
+            if (this.showPassword === false) {
+                this.showPassword = true
+                this.msgShowPassword = 'Ẩn'
+            } else {
+                this.showPassword = false
+                this.msgShowPassword = 'Hiển thị'
+            }
+
+        }
     }
 }
+
+
 </script>
 
-
-show
+<style scoped>
+.form {
+    max-width: 400px;
+}
+</style>
