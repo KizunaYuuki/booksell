@@ -44,14 +44,25 @@ export default {
 
 
 
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import SignUpUser from './components/SignupUser.vue'
 import ManageUser from './components/ManageUser.vue'
+import LoginAdmin from '@/components/LoginAdmin.vue'
 
+export default {
+  components: {
+    LoginAdmin,
+  },
+  data() {
+    return {
+      admin: {}
+    }
+  }
+}
 // Practice
-import { ref, reactive, computed } from 'vue'
+// import { ref, reactive, computed } from 'vue'
 // const rawHmtl = ref("<h3>Red</h3>")
 // const classred = ref('red')
 // const isButtonDisabled = ref(false)
@@ -115,15 +126,15 @@ import { ref, reactive, computed } from 'vue'
 // })
 
 // fullName.value = 'Kizuna Yuuki'
-const isActive = ref(true)
-const error = ref(null)
+// const isActive = ref(true)
+// const error = ref(null)
 
-const classObject = computed(() => ({
-  active: isActive.value && !error.value,
-  'text-danger': error.value && error.value.type === 'fatal'
-}))
-const classtemp = ref('abc')
-const ok = null
+// const classObject = computed(() => ({
+//   active: isActive.value && !error.value,
+//   'text-danger': error.value && error.value.type === 'fatal'
+// }))
+// const classtemp = ref('abc')
+// const ok = null
 
 
 </script>
@@ -154,6 +165,7 @@ const ok = null
     <!-- <TheWelcome /> -->
     <!-- <SignUpUser /> -->
     <!-- <ManageUser /> -->
+    <LoginAdmin />
   </main>
 </template>
 

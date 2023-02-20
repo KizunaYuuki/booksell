@@ -28,7 +28,8 @@ exports.loginAdmin = function (req, res, next) {
                     req.session.adminId = admin._id
                     req.session.discountCode = admin.discountCode;
                     console.log(req.session)
-                    next();
+                    // next();
+                    res.send(admin)
                     // res.redirect("/");
 
                 } else {
