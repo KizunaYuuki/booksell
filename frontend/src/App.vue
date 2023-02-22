@@ -2,6 +2,7 @@
 import HeaderVue from './components/Header.vue'
 import FooterVue from './components/Footer.vue';
 import LoginFormUser from './components/LoginFormUser.vue';
+import ManageUser from './components/ManageUser.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import LoginFormUser from './components/LoginFormUser.vue';
 
   <main>
     <LoginFormUser />
+    <!-- <ManageUser /> -->
   </main>
   <footer>
     <FooterVue />
