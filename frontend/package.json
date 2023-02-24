@@ -13,6 +13,7 @@
     "bootstrap": "^5.2.3",
     "vee-validate": "^4.7.4",
     "vue": "^3.2.45",
+    "vue-star-rating": "^1.7.0",
     "yup": "^1.0.0"
   },
   "devDependencies": {

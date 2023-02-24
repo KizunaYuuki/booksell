@@ -2,24 +2,31 @@
 import HeaderVue from './components/Header.vue'
 import FooterVue from './components/Footer.vue';
 import LoginFormUser from './components/LoginFormUser.vue';
+import RegisterUser from './components/RegisterUser.vue';
+import Manage from './components/Manage.vue';
 import ManageUser from './components/ManageUser.vue';
+import Cart from './components/Cart.vue';
+import Pay from './components/Pay.vue';
+
 </script>
 
-<template>
+<template style="display:block;">
   <header>
-    <HeaderVue />
-    
+    <HeaderVue/>
   </header>
 
   <main>
+    <!-- <Cart /> -->
+    <Pay />
+
     <LoginFormUser />
+    <RegisterUser />
+    <!-- <Manage /> -->
     <!-- <ManageUser /> -->
   </main>
   <footer>
-    <FooterVue />
+    <FooterVue/>
   </footer>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

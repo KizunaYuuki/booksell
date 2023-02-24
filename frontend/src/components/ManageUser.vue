@@ -1,84 +1,60 @@
 <template>
+    <table class="table table-hover container">
+        <thead class="table-primary rounded">
 
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Tên khách hàng</th>
+                <th style="width: 7%;" scope="col">Active</th>
+            </tr>
 
-    <div class="container border border-danger p-3" style="background-color: #ffffff;">
+        </thead>
 
-        <!-- search bar -->
-        <div class="row">
+        <tbody>
 
-            <div class="col-3">
-                <div class="row my-1">
-                    <div class="col">
+            <tr>
+                <th scope="row">06761</th>
+                <td>0332006761</td>
+                <td>Otto</td>
+                <td style="width: 7%;">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
                     </div>
-                </div>
+                </td>
+            </tr>
 
-            </div>
-
-            <div class="col-6">
-                <div class="row my-1">
-                    <div class="col">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td style="width: 7%;">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="">
                     </div>
-                </div>
-            </div>
+                </td>
+            </tr>
 
-
-        </div>
-
-
-        <!-- Title  -->
-        <div class="row">
-
-            <div class="col-4">
-                <div class="row my-1">
-                    <div class="col">
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>Thornton</td>
+                <td style="width: 7%;">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="">
                     </div>
-                </div>
-
-            </div>
-
-            <div class="col-8">
-                <div class="row my-1">
-                    <div class="col-5">ID</div>
-                    <div class="col-5">Phone</div>
-                    <div class="col-2">Active</div>
-                </div>
-            </div>
+                </td>
+            </tr>
 
 
-        </div>
+        </tbody>
 
-
-        <!-- content -->
-        <div class="row">
-
-            <div class="col-4">
-                <div class="row border my-1">
-                    <div class="col">
-                        Quan ly
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-8">
-                <div class="row border my-1">
-                    <div class="col-5">B1906764001</div>
-                    <div class="col-5">0332006710</div>
-                    <div class="col-2">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-    </div>
-
-
+    </table>
 </template>
+
+<!-- th ~ table header
+tr ~ table row
+td ~ table data  -->
+<style scoped>
+
+</style>
