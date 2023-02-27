@@ -8,24 +8,32 @@ import ManageUser from './components/ManageUser.vue';
 import Cart from './components/Cart.vue';
 import Pay from './components/Pay.vue';
 
+
+import TestFetch from './components/TestFetch.vue';
+
 </script>
 
 <template style="display:block;">
   <header>
-    <HeaderVue/>
-  </header>
+  <HeaderVue />
+</header>
 
-  <main>
-    <!-- <Cart /> -->
-    <Pay />
+<main>
 
-    <LoginFormUser />
-    <RegisterUser />
-    <!-- <Manage /> -->
-    <!-- <ManageUser /> -->
-  </main>
-  <footer>
-    <FooterVue/>
+
+  <!-- <TestFetch /> -->
+
+
+  <!-- <Cart /> -->
+  <!-- <Pay /> -->
+
+  <!-- <LoginFormUser /> -->
+  <!-- <RegisterUser /> -->
+  <Manage />
+  <!-- <ManageUser /> -->
+</main>
+<footer>
+  <FooterVue />
   </footer>
 </template>
 

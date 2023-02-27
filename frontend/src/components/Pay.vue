@@ -1,28 +1,23 @@
-<script>
-// let response = await fetch('https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json');
-// let commits = await response.json()
-// console.log(commits)
-</script>
 <template>
     <div class="container">
-        <div class="row border container">
+        <div class="row container">
 
             <!-- Nội dung bên trái: Thông tin khách hàng và địa chỉ giao hàng -->
             <div class="col-7">
 
-                <!-- Thanh điều hướng  -->
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
+            <!-- Thanh điều hướng  -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
 
-                        <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse" id="navbarNav">
 
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <small><a class="nav-link" aria-current="page" href="#">Giỏ hàng</a></small>
-                                </li>
-                                <li class="nav-item">
-                                    <small><a class="nav-link disabled user-select-none" aria-current="page"
-                                            href="#">></a></small>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <small><a class="nav-link" aria-current="page" href="#">Giỏ hàng</a></small>
+                            </li>
+                            <li class="nav-item">
+                                <small><a class="nav-link disabled user-select-none" aria-current="page"
+                                        href="#">></a></small>
                                 </li>
                                 <li class="nav-item">
                                     <small><a class="nav-link active" href="#">Thông tin vận chuyển</a></small>
@@ -47,85 +42,115 @@
                 <div class="container">
                     <div class="p-2 fs-5">
                         Thông tin đơn hàng
+                    </div>
                 </div>
-            </div>
 
-            <!-- Thẻ, chứa thông tin người dùng (Tên, email, nút đăng xuất) -->
-            <!-- <div class="container">
-                    <div class="fs-6 row">
-                        <div >
-                            <img class="col-2" src="../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg">
-                        </div>
-
-
-                        <div class="col-10 align-middle">
-                            <div>Phan Trung Thành (thanhb1906764@student.ctu.edu.vn)</div>
-                                                                        <div><button class="btn btn-outline-danger">Đăng xuất</button></div>                        
-                                                                    </div>
-
-                                                                </div>
-                                                            </div> -->
+                <!-- Thẻ, chứa thông tin người dùng (Tên, email, nút đăng xuất) -->
+                <!-- <div class="container">
+                            <div class="fs-6 row">
+                                <div >
+                                    <img class="col-2" src="../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg">
+                                </div>
 
 
+                                <div class="col-10 align-middle">
+                                    <div>Phan Trung Thành (thanhb1906764@student.ctu.edu.vn)</div>
+                                                                                                <div><button class="btn btn-outline-danger">Đăng xuất</button></div>                        
+                                                                                            </div>
 
-                <!-- Input thông tin người dùng -->
-                <div class="container">
-                    <div class="p-2">
+                                                                                    </div>
+                                                                                </div> -->
 
-                        <!-- Địa chỉ giao hàng - select -->
-                        <div class="form-group form-floating mb-1">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <label class="fs-6" for="floatingInput">Địa chỉ</label>
-                        </div>
 
-                        <!-- Tên khách hàng -->
-                        <div class="form-floating mb-1">
-                            <input type="email" class="form-control" placeholder="name@example.com">
-                            <label class="fs-6" for="floatingInput">Họ tên</label>
-                        </div>
 
-                        <!-- Số điện thoại  -->
-                        <div class="form-floating mb-1">
-                            <input type="text" class="form-control" placeholder="name@example.com">
-                            <label class="fs-6" for="floatingInput">Số điện thoại</label>
+            <!-- Input thông tin người dùng -->
+            <div class="container">
+                <div class="p-2">
+
+                    <!-- Địa chỉ giao hàng - select -->
+                    <div class="form-group form-floating mb-2">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label class="fs-6" for="floatingInput">Địa chỉ</label>
+                    </div>
+
+                    <!-- Tên khách hàng -->
+                    <div class="form-floating mb-2">
+                        <input type="email" class="form-control" placeholder="name@example.com">
+                        <label class="fs-6" for="floatingInput">Họ tên</label>
+                    </div>
+
+                    <!-- Số điện thoại  -->
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" placeholder="name@example.com">
+                        <label class="fs-6" for="floatingInput">Số điện thoại</label>
                         </div>
 
 
                         <!-- Địa chỉ - input-->
-                        <div class="form-floating mb-1">
+                        <div class="form-floating mb-2">
                             <input type="text" class="form-control" placeholder="name@example.com">
                             <label class="fs-6" for="floatingInput">Địa chỉ</label>
                         </div>
 
 
                         <!-- Chọn Tỉnh, Quận, Huyện theo Select -->
+                        <!-- <div class="d-flex">
+                                <div class="form-group form-floating mb-2 me-1 col">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Chọn Tỉnh</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <label class="fs-6" for="floatingInput">Tỉnh/Thành Phố</label>
+                                </div>
+
+                                <div class="form-group form-floating mb-2 me-1 col">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Chọn Quận/Huyện</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <label class="fs-6" for="floatingInput">Quận/Huyện</label>
+                                </div>
+
+                                <div class="form-group form-floating mb-2 col">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Chọn Phường/Xã</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <label class="fs-6" for="floatingInput">Phường/Xã</label>
+                                </div>
+                            </div> -->
+
+
+
                         <div class="d-flex">
-                            <div class="form-group form-floating mb-1 me-1 col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Chọn Tỉnh</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+
+                            <div class="form-group form-floating mb-2 me-1 col">
+                                <select class="form-select"
+                                    aria-label="Default select example">
+                                    <option selected value="Chọn Tỉnh">Chọn Tỉnh</option>
                                 </select>
                                 <label class="fs-6" for="floatingInput">Tỉnh/Thành Phố</label>
                             </div>
 
-                            <div class="form-group form-floating mb-1 me-1 col">
+                            <div class="form-group form-floating mb-2 me-1 col">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Chọn Quận/Huyện</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
                                 </select>
                                 <label class="fs-6" for="floatingInput">Quận/Huyện</label>
                             </div>
 
-                            <div class="form-group form-floating mb-1 col">
+                            <div class="form-group form-floating mb-2 col">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Chọn Phường/Xã</option>
                                     <option value="1">One</option>
@@ -134,7 +159,11 @@
                                 </select>
                                 <label class="fs-6" for="floatingInput">Phường/Xã</label>
                             </div>
+
                         </div>
+
+
+
 
                         <!-- Nút Giỏ hàng và Chọn phương thức thanh toán -->
                         <div class="d-flex justify-content-between">
@@ -158,23 +187,36 @@
                         <tbody>
 
                             <tr style="font-size: 12px;">
-                                <td class="d-flex justify-content-between align-items-start" style="width: 20%;">
-                                    <div class="me-auto ms-2 ">
-                                        <img class="fw-bold" src="../assets/4_5f9624b1ec774721962320840ac57f15_small.jpg">
-                                        <!-- <span class="badge bg-primary rounded-pill">1</span> -->
+                                <td class="" style="width: 20%">
+                                    <div class="figure position-relative">
+                                        <img src="../assets/4_5f9624b1ec774721962320840ac57f15_medium.jpg" width="60"
+                                            class="rounded" alt="...">
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">999+</span>
                                     </div>
-
                                 </td>
-
-                                <td class="align-middle" style="width: 60%;">Kaguya - Cuộc chiến tỏ tình - Tập 4 (Tặng Kèm 1
+                                <td class="align-middle" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 4 (Tặng Kèm 1
                                     Trong 2 Mẫu Thẻ Học Sinh)</td>
-                                <td class="align-middle" style="width: 10%;"></td>
+                                <td class="align-middle" style="width: 10%;">999...đ</td>
+                            </tr>
+
+                            <tr style="font-size: 12px;">
+                                <td class="" style="width: 20%">
+                                    <div class="figure position-relative">
+                                        <img src="../assets/10_611037f3af2243b880dccec358c03fec_medium.jpg" width="60"
+                                            class="rounded" alt="...">
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">1</span>
+                                    </div>
+                                </td>
+                                <td class="align-middle" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 10 (Tặng Kèm
+                                    1 Trong 2 Clear File)</td>
                                 <td class="align-middle" style="width: 10%;">36000đ</td>
                             </tr>
 
                         </tbody>
-                    </table>
 
+                    </table>
 
                 </div>
 
@@ -184,31 +226,29 @@
                 <!-- Tạm tính, Phi Ship -->
                 <div class="container">
 
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between py-2">
                         <small class="text-secondary">Tạm tính</small>
-                        <small class="text-secondary">200000d</small>
+                        <small class="">36000đ</small>
                     </div>
-
                     <div class="d-flex justify-content-between">
                         <small class="text-secondary">Phí Ship</small>
-                        <small class="text-secondary">30000d</small>
+                        <small class="">10000đ</small>
                     </div>
 
                 </div>
 
 
-                <br />
+                <hr />
                 <!-- Tổng tiền -->
                 <div class="container">
 
-                    <div class="d-flex justify-content-between fs-5">
-                        <div class="text-secondary">Tổng tiền</div>
-                        <div class="fw-bolder">230000d</div>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-secondary fs-6">Tổng tiền</div>
+                        <div class="fw-bolder">46000đ</div>
                     </div>
 
                 </div>
 
             </div>
         </div>
-    </div>
-</template>
+</div></template>

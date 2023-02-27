@@ -14,6 +14,7 @@ export default {
 
 <template>
   <div id="app">
+    <div>dfs</div>
     <Nav></Nav>
     <div class="container-lg" style="margin-top: 20px;">
       <!-- <Card></Card> -->
