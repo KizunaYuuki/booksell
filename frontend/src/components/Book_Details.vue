@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+
+        <!-- Chi tiết sản phẩm  -->
         <div class="rounded border shadow-sm" style="display: flex;
             ">
             <div style="width: 30rem; padding: 10px;">
@@ -58,7 +60,12 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Thông tin sản phẩm và bình luận  -->
         <div class="rounded border shadow-sm" style="margin-top: 10px; padding: 10px;">
+
+            <!-- Thanh điều hướng  -->
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
@@ -67,13 +74,20 @@
                         type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Đánh giá</button>
                 </div>
             </nav>
+
+
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">Giá sản
                     phẩm trên đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức
                     và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phụ phí đóng gói, phí vận chuyển, phụ phí
                     hàng cồng kềnh,...
                 </div>
+
+                <!-- Bình luận  -->
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                    <CommentForm />
+
                     <Comments />
                 </div>
             </div>
@@ -85,11 +99,16 @@
 import Carousel_ImgVue from './Carousel_Img.vue';
 import Modal from './Modal.vue'
 import Comments from './Comments.vue'
+import CommentForm from './CommentForm.vue';
 export default {
     components: {
-        Carousel_ImgVue, Modal, Comments
+        Carousel_ImgVue, Modal, Comments, CommentForm
+    },
+    data() {
+        return {
+            msg: 'Test'
+        }
     }
-
 }
 </script>
 
