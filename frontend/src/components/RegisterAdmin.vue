@@ -11,34 +11,32 @@
             <!-- position-absolute top-50 start-50 translate-middle -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Đăng Ký Tài Khoản</h5>
-                    <!-- <img alt="Vue logo" class="logo" src="../assets/login_FILL0_wght400_GRAD0_opsz48.svg" width="125" height="125" /> -->
-
-
+                    <h5 class="modal-title" id="staticBackdropLabel">Đăng ký tài khoản</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
+
                     <Form class="container form" @submit="submitLogin" :validation-schema="adminSchema">
                         <div class="row">
-                            <!-- <div class="col"></div> -->
                             <div class="col">
 
 
                                 <!-- phone -->
-                                <!-- <div class="form-group form-floating">
-                    <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
-                    <label for="phone">Số điện thoại</label>
-                    <p class="fw-lighter">Số điện thoại có 10 chữ số, là giá trị bắt buộc</p>
-                    <ErrorMessage name="phone" class="error-feedback" />
-                </div> -->
+                                <div class="form-group form-floating">
+                                    <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại"
+                                        v-model="admin.phone" />
+                                    <label for="phone">Số điện thoại</label>
+                                    <ErrorMessage name="phone" class="error-feedback" />
+                                </div>
 
 
+                                <br />
                                 <!-- name -->
                                 <div class="form-group form-floating">
                                     <Field name="adminname" type="text" class="form-control" placeholder="Tên"
                                         v-model="admin.adminname" />
                                     <label for="adminname">Tên</label>
-                                    <!-- <p class="fw-lighter">Sử dụng 3 ký tự trở lên, tối đa 30 ký tự</p> -->
                                     <ErrorMessage name="adminname" class="error-feedback" />
                                 </div>
 
@@ -52,12 +50,9 @@
                                                 class="form-control" placeholder="Mật khẩu" v-model="admin.password" />
                                             <label for="password">Mật khẩu</label>
                                         </div>
-                                        <!-- Sau khi xử lý summit sẽ đổi thành button  -->
                                         <span @click="showPasswordF" class="input-group-text user-select-none">{{
                                             msgShowPassword }}</span>
-
                                     </div>
-                                    <!-- <p class="fw-lighter">Sử dụng 4 ký tự trở lên</p> -->
                                     <ErrorMessage name="password" class="error-feedback" />
                                 </div>
 
@@ -89,6 +84,7 @@
                                     </select>
                                     <label for="city">Tỉnh/Thành Phố</label>
                                 </div>
+
 
 
                                 <!-- district -->
@@ -130,19 +126,13 @@
                                 <br />
                                 <!-- login -->
                                 <div class="form-group">
-                                    <a class="btn text-primary">Tạo tài khoản</a>
-                                    <button type="submit" class="btn btn-primary float-end">Đăng nhập</button>
+                                    <a class="btn text-primary">Đăng nhập</a>
+                                    <button type="submit" class="btn btn-primary float-end">Tạo tài khoản</button>
                                 </div>
 
 
                             </div>
-
-
-
-                            <!-- <div class="col"><img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg"/></div> -->
-                            <!-- <div class="col"></div> -->
                         </div>
-
 
 
 
@@ -180,31 +170,28 @@ export default {
 
     data() {
         const adminSchema = yup.object().shape({
-            dateOfBirth: yup
-                .date(),
-            adminname: yup
-                .string()
-                .required("Tên phải bắt buộc phải có")
-                .min(3, "Tên phải có ít nhất 3 ký tự")
-                .max(30, "Tên chứa nhiều nhất 30 ký tự"),
-            password: yup
-                .string()
-                .required("Mật khẩu bắt buộc phải có")
-                .min(3, "Mật khẩu phải có ít nhất 3 ký tự")
-                .max(24, "Mật khẩu chứa nhiều nhất 30 ký tự"),
-            comfirmpassword: yup
-                .string()
-                .required('Hãy nhập mật khẩu lần nữa')
-                .oneOf([yup.ref('password')], 'Mật khẩu không trùng khớp.'),
-            registerDate: yup
-                .date(),
             phone: yup
                 .string()
-                .required("Số điện thoại bắt buộc phải có")
+                // .required("Số điện thoại bắt buộc phải có")
                 .matches(
                     /((09|03|07|08|05)+([0-9]{8})\b)/g,
                     "Số điện thoại không hợp lệ."
                 ),
+            adminname: yup
+                .string()
+                // .required("Tên bắt buộc phải có")
+                .min(3, "Tên phải có ít nhất 3 ký tự")
+                .max(30, "Tên chứa nhiều nhất 30 ký tự"),
+            password: yup
+                .string()
+                // .required("Mật khẩu bắt buộc phải có")
+                .min(3, "Mật khẩu phải có ít nhất 3 ký tự")
+                .max(24, "Mật khẩu chứa nhiều nhất 30 ký tự"),
+            comfirmpassword: yup
+                .string()
+                // .required('Hãy nhập mật khẩu lần nữa')
+                .oneOf([yup.ref('password')], 'Mật khẩu không trùng khớp.'),
+
         })
         return {
             showPassword: false,
@@ -245,5 +232,4 @@ export default {
 <style scoped>
 .form {
     max-width: 400px;
-}
-</style>
+}</style>

@@ -7,9 +7,11 @@ import Manage from './components/Manage.vue';
 import ManageUser from './components/ManageUser.vue';
 import Cart from './components/Cart.vue';
 import Pay from './components/Pay.vue';
+import RegisterAdmin from './components/RegisterAdmin.vue';
 
 
-import TestFetch from './components/TestFetch.vue';
+// import TestFetch from './components/TestFetch.vue';
+// import SelectAddress from './components/SelectAddress.vue';
 
 </script>
 
@@ -22,14 +24,16 @@ import TestFetch from './components/TestFetch.vue';
 
 
   <!-- <TestFetch /> -->
+  <!-- <SelectAddress /> -->
 
 
   <!-- <Cart /> -->
   <!-- <Pay /> -->
 
-  <!-- <LoginFormUser /> -->
-  <!-- <RegisterUser /> -->
-  <Manage />
+  <LoginFormUser />
+  <!-- <RegisterAdmin /> -->
+  <RegisterUser />
+  <!-- <Manage /> -->
   <!-- <ManageUser /> -->
 </main>
 <footer>
