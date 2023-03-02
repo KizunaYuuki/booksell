@@ -2,3 +2,5 @@ mongodb+srv://mongo:mongo@cluster0.5dw7dn2.mongodb.net/local_library?retryWrites
 
 
 mongodb+srv://mongo:mongo@clusternienluan.jqgy2ey.mongodb.net/testDataHere?retryWrites=true&w=majority
+
+mongodb+srv://mongo:mongo@clusternienluan.jqgy2ey.mongodb.net/BooksStore?retryWrites=true&w=majority

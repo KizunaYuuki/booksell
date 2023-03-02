@@ -12,32 +12,35 @@ import RegisterAdmin from './components/RegisterAdmin.vue';
 
 // import TestFetch from './components/TestFetch.vue';
 // import SelectAddress from './components/SelectAddress.vue';
+import Book_Details from './components/Book_Details.vue';
 
 </script>
 
 <template style="display:block;">
   <header>
-  <HeaderVue />
-</header>
+    <HeaderVue />
+  </header>
 
-<main>
-
-
-  <!-- <TestFetch /> -->
-  <!-- <SelectAddress /> -->
+  <main>
 
 
-  <!-- <Cart /> -->
-  <!-- <Pay /> -->
+    <!-- <TestFetch /> -->
+    <!-- <SelectAddress /> -->
+    <Book_Details />
 
-  <LoginFormUser />
-  <!-- <RegisterAdmin /> -->
-  <RegisterUser />
-  <!-- <Manage /> -->
-  <!-- <ManageUser /> -->
-</main>
-<footer>
-  <FooterVue />
+
+
+    <!-- <Cart /> -->
+    <!-- <Pay /> -->
+
+    <LoginFormUser />
+    <!-- <RegisterAdmin /> -->
+    <RegisterUser />
+    <!-- <Manage /> -->
+    <!-- <ManageUser /> -->
+  </main>
+  <footer>
+    <FooterVue />
   </footer>
 </template>
 
