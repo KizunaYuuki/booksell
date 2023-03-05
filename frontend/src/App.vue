@@ -10,7 +10,7 @@ import Pay from './components/Pay.vue';
 import RegisterAdmin from './components/RegisterAdmin.vue';
 
 
-// import TestFetch from './components/TestFetch.vue';
+import AddressVue from './components/Address.vue';
 // import SelectAddress from './components/SelectAddress.vue';
 import Book_Details from './components/Book_Details.vue';
 
@@ -24,15 +24,14 @@ import Book_Details from './components/Book_Details.vue';
   <main>
 
 
-    <!-- <TestFetch /> -->
     <!-- <SelectAddress /> -->
-    <Book_Details />
+    <!-- <Book_Details /> -->
 
 
 
     <!-- <Cart /> -->
     <!-- <Pay /> -->
-
+    <AddressVue />
     <LoginFormUser />
     <!-- <RegisterAdmin /> -->
     <RegisterUser />

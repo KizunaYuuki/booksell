@@ -87,37 +87,7 @@
 
 
                         <!-- Chọn Tỉnh, Quận, Huyện theo Select -->
-                        <div class="d-flex">
-                            <div class="form-group form-floating mb-2 me-1 col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Chọn Tỉnh</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <label class="fs-6" for="floatingInput">Tỉnh/Thành Phố</label>
-                            </div>
-
-                            <div class="form-group form-floating mb-2 me-1 col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Chọn Quận/Huyện</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <label class="fs-6" for="floatingInput">Quận/Huyện</label>
-                            </div>
-
-                            <div class="form-group form-floating mb-2 col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Chọn Phường/Xã</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <label class="fs-6" for="floatingInput">Phường/Xã</label>
-                            </div>
-                        </div>
+                        <AddressVue />
 
 
                         <!-- Chọn phương thức thanh toán -->
@@ -238,3 +208,7 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import AddressVue from './Address.vue';
+</script>
