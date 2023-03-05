@@ -3,11 +3,23 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const AddressSchema = new Schema({
-    description: {
+    city: {
         type: String,
-        minLength: 3,
-        maxLenght: 40,
-    }
+        maxLenght: 20,
+    },
+    district: {
+        type: String,
+        maxLenght: 20,
+    },
+    ward: {
+        type: String,
+        maxLenght: 20,
+    },
+    streetName: {
+        type: String,
+        maxLenght: 256,
+    },
+    _idUser: { type: Schema.Types.ObjectId, }
 });
 
 // const Address = mongoose.model("Address", AddressSchema);
