@@ -19,12 +19,15 @@ const AddressSchema = new Schema({
         type: String,
         maxLenght: 256,
     },
-    _idUser: { type: Schema.Types.ObjectId, }
+    _idUser: { 
+        type: Schema.Types.ObjectId, 
+        required: true,
+    }
 });
 
-// const Address = mongoose.model("Address", AddressSchema);
+const Address = mongoose.model("Address", AddressSchema);
 
 module.exports = {
-    AddressSchema: AddressSchema,
-    // Address: Address
+    // AddressSchema: AddressSchema,
+    Address: Address
 }

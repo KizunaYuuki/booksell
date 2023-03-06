@@ -2,40 +2,42 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const Order = require("./order.service");
-const Address = require("./address.service");
-
 const UserSchema = new Schema({
-    firstname: {
+    dateOfBirth: {
+        type: Date,
+        default: null,
+    },
+    name: {
         type: String,
         minLength: 3,
-        maxLenght: 20,
-        require: [true, "Why no first name"],
-    },
-    lastname: {
-        type: String,
-        minLength: 3,
-        maxLenght: 20,
-    },
-    phoneNumber: {
-        unique: [true, "Phone number is unique"],
-        type: String,
-        minLength: 10,
-        maxLenght: 10,
-        required: [true, "Why no phone number"],
-    },
-    // address: [Address.AddressSchema],
+        maxLenght: 30,
+    },    
     password: { 
         type: String, 
         required: [true, "Why no password?"], 
     },
-    // order: [Order.OrderSchema],
+    registerDate: {
+        type: Date,
+        default: Date.now(),
+    },
+    sex: {
+        type: Boolean
+    },
     statusUser: {
         type: Boolean,
         default: true,
         // true ~ account activate, false ~ account blocked
-    }
+    },    
+    phone: {
+        unique: true,
+        type: String,
+        maxLenght: 10,
+        required: true,
+    },
+});
 
-})
+const User = mongoose.model("User", UserSchema);
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = {
+    User: User
+}
