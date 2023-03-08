@@ -2,7 +2,7 @@
     <Form class="container form py-2" @submit="submitComment" :validation-schema="commentSchema">
 
         <!-- Đánh giá  -->
-        <div class="form-group fs-6 mb-2 d-flex justify-content-star">
+        <div class="form-group fs-6 mb-2 d-flex justify-content-end">
             <star-rating class="" :show-rating="false" rating="" star-size="24" />
         </div>
 

@@ -9,3 +9,4 @@ userRouter.route('/register')
     .post(userController.registerUser);
 
 module.exports = userRouter;
+

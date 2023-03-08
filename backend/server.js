@@ -12,7 +12,7 @@ async function startServer() {
         console.log("Connected to the database!"); // notice connected
         const PORT = config.app.port; // get port to /app/config/index.js
         app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`);
+            console.log(`Server is running on port ${PORT} | http://localhost:${PORT}`);
         });
 
         // connect by mongoose

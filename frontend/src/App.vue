@@ -25,13 +25,13 @@ import Book_Details from './components/Book_Details.vue';
 
 
     <!-- <SelectAddress /> -->
-    <!-- <Book_Details /> -->
+    <Book_Details />
 
 
 
     <!-- <Cart /> -->
     <!-- <Pay /> -->
-    <AddressVue />
+    <!-- <AddressVue /> -->
     <LoginFormUser />
     <!-- <RegisterAdmin /> -->
     <RegisterUser />
