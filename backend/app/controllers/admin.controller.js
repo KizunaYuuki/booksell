@@ -26,7 +26,7 @@ exports.loginAdmin = function (req, res, next) {
                 if (same) {
                     console.log("Pass match");
                     req.session.adminId = admin._id
-                    req.session.discountCode = admin.discountCode;
+                    // req.session.discountCode = admin.discountCode;
                     console.log(req.session)
                     // next();
                     res.send(admin)
@@ -47,9 +47,11 @@ exports.loginAdmin = function (req, res, next) {
 
 // logout for admin
 exports.logoutAdmin = function (req, res, next) {
-    req.session.destroy(() => {
-        res.redirect('/')
-    })
+    // req.session.destroy(() => {
+    //     res.redirect('/')
+    // })
+    req.session = null
+    res.redirect('/')
 }
 
 // auth login when logined

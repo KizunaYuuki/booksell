@@ -6,18 +6,29 @@ const userRouter = require("./app/routes/user.route");
 const ApiError = require("./app/api-error");
 
 const app = express();
-const expressSession = require('express-session');
-app.use(expressSession({
-    secret: 'keyboard cat'
+// const expressSession = require('express-session');
+// app.use(expressSession({
+//     secret: 'keyboard cat'
+// }))
+
+// // Tạo biến toàn cầu để ẩn nút Login và Signup khi đã đăng nhập
+// global.loggedIn = null;
+
+// app.use("*", (req, res, next) => {
+//     loggedIn = req.session.adminId;
+//     next();
+// })
+
+
+// test cookie-session
+var cookieSession = require('cookie-session')
+app.use(cookieSession({
+  name: 'session',
+  keys: ['/* secret keys */'],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
-
-// Tạo biến toàn cầu để ẩn nút Login và Signup khi đã đăng nhập
-global.loggedIn = null;
-
-app.use("*", (req, res, next) => {
-    loggedIn = req.session.adminId;
-    next();
-})
 
 
 
@@ -28,7 +39,8 @@ app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
-    console.log(req.session)
+    // req.session.test = 1
+    console.log(req.session.adminId)
     res.json({
         message: "Welcome to contact book application."
     });

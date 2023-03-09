@@ -26,10 +26,18 @@ adminRouter.route('/manage/user')
     // .get(adminController.authMiddleware, adminController.findAllUser);
     .get(adminController.findAllUser);
 
+// test
+adminRouter.get('/abc', (req, res) => {
+    // req.session = null
+    req.session.abc = (req.session.abc || 0) + 1
+    console.log(req.session);
+    res.send("Home Page");
+})
+
+
+
 
 adminRouter.route('/manage/user/:id')
     .put(adminController.authMiddleware, adminController.block_activateAccountUser);
-
-
 
 module.exports = adminRouter;
