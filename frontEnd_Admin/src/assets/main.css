@@ -1,0 +1,44 @@
+@import './base.css';
+
+#app {
+  /* max-width: 100%; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+a:hover {
+  color: rgba(255, 68, 0, 0.694);
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 75%, 47%, 0.2);
+  }
+}
+
+p {
+  font-size: medium;
+}
+
+/* @media (min-width: 2000px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
