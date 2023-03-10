@@ -27,12 +27,12 @@ import Test from './components/Test.vue';
 
 
     <!-- <SelectAddress /> -->
-    <Book_Details />
-    <Test />
+    <!-- <Book_Details /> -->
+    <!-- <Test /> -->
 
 
     <!-- <Cart /> -->
-    <!-- <Pay /> -->
+    <Pay />
     <!-- <AddressVue /> -->
     <LoginFormUser />
     <!-- <RegisterAdmin /> -->
