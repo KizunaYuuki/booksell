@@ -1,4 +1,5 @@
 <template>
+    <title>Thông tin vận chuyển - Đặt hàng</title>
     <div class="container">
         <div class="row container">
 
@@ -20,7 +21,7 @@
                                             href="#">></a></small>
                                 </li>
                                 <li class="nav-item">
-                                    <small><a class="nav-link active" href="#">Thông tin vận chuyển</a></small>
+                                    <small><a class="nav-link active" href="#">Thông tin vận chuyển - Đặt hàng</a></small>
                                 </li>
 
                             </ul>
@@ -42,13 +43,10 @@
                 <div class="container">
                     <ul class="list-group px-2">
                         <li class="list-group-item fw-bolder">
-                            <div class="btn px-0 border border-0">Khánh (0330006710)</div>
-                            <a href="#" class="btn btn-outline-danger mx-2">Đăng xuất</a>
+                            <div><a class="me-2 fa-solid fa-user"></a>Khánh (0330006710)<a href="#" class="text-decoration-none mx-2 text-danger">Đăng xuất</a></div>
                         </li>
                     </ul>
                 </div>
-
-
 
 
                 <!-- Input thông tin người dùng -->
@@ -58,10 +56,7 @@
                         <!-- Địa chỉ giao hàng - select -->
                         <div class="form-group form-floating mb-2">
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected>Chọn Địa Chỉ</option>
                             </select>
                             <label class="fs-6" for="floatingInput">Địa chỉ</label>
                         </div>
@@ -93,7 +88,7 @@
                         <!-- Chọn phương thức thanh toán -->
                         <div class="form-group form-floating mb-2">
                             <select required class="form-select" aria-label="">
-                                <option selected value="payment">---</option>
+                                <option selected value="payment">Chọn phương thức thanh toán</option>
                                 <option value="cash">Thanh toán khi nhận hàng</option>
                                 <option value="bankTransfer">Chuyển khoản</option>
                             </select>
@@ -128,7 +123,7 @@
                                         <img src="../assets/4_5f9624b1ec774721962320840ac57f15_medium.jpg" width="60"
                                             class="rounded" alt="...">
                                         <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">1</span>
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
                                     </div>
                                 </td>
                                 <td class="align-middle" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 4 (Tặng Kèm 1
@@ -146,7 +141,7 @@
                                         <img src="../assets/10_611037f3af2243b880dccec358c03fec_medium.jpg" width="60"
                                             class="rounded" alt="...">
                                         <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">1</span>
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
                                     </div>
                                 </td>
                                 <td class="align-middle" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 10 (Tặng Kèm
@@ -182,11 +177,11 @@
                 <div class="container">
 
                     <div class="d-flex justify-content-between py-2">
-                        <small class="text-secondary">Tính tạm</small>
+                        <small class="text-muted">Tính tạm</small>
                         <small class="">72000đ</small>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <small class="text-secondary">Phí Ship</small>
+                        <small class="text-muted">Phí Ship</small>
                         <small class="">30000đ</small>
                     </div>
 
@@ -198,7 +193,7 @@
                 <div class="container">
 
                     <div class="d-flex justify-content-between">
-                        <div class="text-secondary fs-6">Tổng tiền</div>
+                        <div class="text-muted fs-6">Tổng tiền</div>
                         <div class="fw-bolder">102000đ</div>
                     </div>
 

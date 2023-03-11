@@ -12,8 +12,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Đăng nhập</h5>
-                    <!-- <img alt="Vue logo" class="logo" src="../assets/login_FILL0_wght400_GRAD0_opsz48.svg" width="125" height="125" /> -->
-
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -23,18 +21,8 @@
                             <!-- <div class="col"></div> -->
                             <div class="col">
 
-
-                                <!-- phone -->
-                                <!-- <div class="form-group form-floating">
-                    <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
-                    <label for="phone">Số điện thoại</label>
-                    <p class="fw-lighter">Số điện thoại có 10 chữ số, là giá trị bắt buộc</p>
-                    <ErrorMessage name="phone" class="error-feedback" />
-                </div> -->
-
-
                                 <!-- name -->
-                                <div class="form-group form-floating">
+                                <div class="form-group form-floating mb-3">
                                     <Field name="adminname" type="text" class="form-control" placeholder="Tên"
                                         v-model="admin.adminname" />
                                     <label for="adminname">Tên</label>
@@ -42,10 +30,8 @@
                                     <ErrorMessage name="adminname" class="error-feedback" />
                                 </div>
 
-
-                                <br />
                                 <!-- password -->
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <div class="input-group">
                                         <div class="form-floating">
                                             <Field name="password" v-bind:type="showPassword ? 'text' : 'password'"
@@ -61,94 +47,18 @@
                                     <ErrorMessage name="password" class="error-feedback" />
                                 </div>
 
-
-                                <!-- password confirm -->
-                                <!-- <div class="form-group">
-                    <div class="input-group">
-                        <div class="form-floating">
-                            <Field name="password-again" type="password" class="form-control" placeholder="Xác nhận mật khẩu" />
-                            <label for="password-again">Xác nhận</label>
-                        </div>
-                        <span @click="showPasswordF" class="input-group-text">{{ msgShowPassword }}</span>
-                    </div>
-                    <p class="fw-lighter">Phải khớp với mật khẩu ở phía trên</p>
-                    <ErrorMessage name="password-again" class="error-feedback" />
-                </div> -->
-
-
-                                <!-- city -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <select required class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Tỉnh/Thành Phố</option>
-                        <option value="Cần Thơ">Cần Thơ</option>
-                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                        <option value="Vĩnh Long">Vĩnh Long</option>
-                    </select>
-                    <label for="city">Tỉnh/Thành Phố</label>
-                </div> -->
-
-
-                                <!-- district -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <select class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Quận/Huyện</option>
-                        <option value="Phụng Hiệp">Phụng Hiệp</option>
-                        <option value="Châu Thành">Châu Thành</option>
-                    </select>
-                    <label for="district">Quận/Huyện</label>
-                </div> -->
-
-
-                                <!-- ward -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <select class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Xã/Phường</option>
-                        <option value="Thạnh Hoà">Thạnh Hoà</option>
-                        <option value="Hoà An">Hoà An</option>
-                    </select>
-                    <label for="ward">Xã/Phường</label>
-                </div> -->
-
-
-                                <!-- streetName -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <Field name="streetName" type="text" class="form-control" placeholder="Tên đường" />
-                    <label for="streetName">Tên đường</label>
-                    <ErrorMessage name="streetName" class="error-feedback" />
-                </div> -->
-
-
-                                <!-- register -->
-                                <!-- <div class="form-group mb-3">
-                    <button type="button" class="btn btn-outline-primary">Đăng ký</button>
-                </div> -->
-
-
-                                <br />
                                 <!-- login -->
+                                <hr />
                                 <div class="form-group">
-                                    <a class="btn text-primary">Tạo tài khoản</a>
-                                    <button type="submit" class="btn btn-primary float-end">Đăng nhập</button>
+                                    <a class="btn btn-outline-primary">Tạo tài khoản</a>
+                                    <button type="submit" class="btn btn-primary text-white float-end">Đăng nhập</button>
                                 </div>
 
-
                             </div>
-
-
-
-                            <!-- <div class="col"><img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg"/></div> -->
-                            <!-- <div class="col"></div> -->
                         </div>
-
-
-
 
                     </Form>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Ok</button>
-                </div> -->
             </div>
         </div>
     </div>

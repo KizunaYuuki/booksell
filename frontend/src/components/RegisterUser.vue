@@ -11,9 +11,8 @@
             <!-- position-absolute top-50 start-50 translate-middle -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Đăng Ký Tài Khoản - Test</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Đăng Ký Tài khoản người dùng</h5>
                     <!-- <img alt="Vue logo" class="logo" src="../assets/login_FILL0_wght400_GRAD0_opsz48.svg" width="125" height="125" /> -->
-
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -22,7 +21,6 @@
                         <div class="row">
                             <!-- <div class="col"></div> -->
                             <div class="col">
-
 
                                 <!-- phone -->
                                 <div class="form-group form-floating mb-2">
@@ -40,7 +38,6 @@
                                     <ErrorMessage name="name" class="error-feedback" />
                                 </div>
 
-
                                 <!-- password -->
                                 <div class="form-group mb-2">
                                     <div class="input-group">
@@ -52,12 +49,10 @@
                                         <!-- Sau khi xử lý summit sẽ đổi thành button  -->
                                         <span @click="showPasswordF" class="input-group-text user-select-none">{{
                                             msgShowPassword }}</span>
-
                                     </div>
                                     <!-- <p class="fw-lighter">Sử dụng 4 ký tự trở lên</p> -->
                                     <ErrorMessage name="password" class="error-feedback" />
                                 </div>
-
 
                                 <!-- password confirm -->
                                 <div class="form-group mb-2">
@@ -73,7 +68,6 @@
                                     <ErrorMessage name="comfirmpassword" class="error-feedback" />
                                 </div>
 
-
                                 <!-- sex -->
                                 <div v-show="true" class="form-group form-floating mb-2">
                                     <select required class="form-select" aria-label="">
@@ -84,7 +78,6 @@
                                     <label class="fs-6" for="sex">Giới tính</label>
                                 </div>
 
-
                                 <!-- birthday -->
                                 <div class="form-group form-floating mb-2">
                                     <Field name="birthday" type="date" class="form-control" placeholder="Tên"
@@ -93,79 +86,18 @@
                                     <ErrorMessage name="birthday" class="error-feedback" />
                                 </div>
 
-
-                                <!-- city -->
-                                <!-- <div v-show="true" class="form-group form-floating mb-2">
-                                    <select required class="form-select" aria-label="">
-                                        <option value="">Hãy chọn một Tỉnh/Thành Phố</option>
-                                        <option value="Cần Thơ">Cần Thơ</option>
-                                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                                        <option value="Vĩnh Long">Vĩnh Long</option>
-                                    </select>
-                                    <label class="fs-6" for="city">Tỉnh/Thành Phố</label>
-                                </div> -->
-
-
-                                <!-- district -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <select class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Quận/Huyện</option>
-                        <option value="Phụng Hiệp">Phụng Hiệp</option>
-                        <option value="Châu Thành">Châu Thành</option>
-                    </select>
-                    <label for="district">Quận/Huyện</label>
-                </div> -->
-
-
-                                <!-- ward -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <select class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Xã/Phường</option>
-                        <option value="Thạnh Hoà">Thạnh Hoà</option>
-                        <option value="Hoà An">Hoà An</option>
-                    </select>
-                    <label for="ward">Xã/Phường</label>
-                </div> -->
-
-
-                                <!-- streetName -->
-                                <!-- <div class="form-group form-floating mb-3">
-                    <Field name="streetName" type="text" class="form-control" placeholder="Tên đường" />
-                    <label for="streetName">Tên đường</label>
-                    <ErrorMessage name="streetName" class="error-feedback" />
-                </div> -->
-
-
-                                <!-- register -->
-                                <!-- <div class="form-group mb-3">
-                    <button type="button" class="btn btn-outline-primary">Đăng ký</button>
-                </div> -->
-
-
                                 <!-- login -->
+                                <hr />
                                 <div class="form-group fs-6 mb-2 d-flex justify-content-between">
                                     <a class="btn btn-outline-primary">Tạo tài khoản</a>
-                                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                                    <button type="submit" class="btn btn-primary text-white">Đăng nhập</button>
                                 </div>
 
-
                             </div>
-
-
-
-                            <!-- <div class="col"><img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg"/></div> -->
-                            <!-- <div class="col"></div> -->
                         </div>
-
-
-
-
                     </Form>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Ok</button>
-                </div> -->
+
             </div>
         </div>
     </div>

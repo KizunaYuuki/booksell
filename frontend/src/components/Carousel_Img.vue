@@ -8,9 +8,9 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                 aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner rounded-3 border">
             <div class="carousel-item active">
-                <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_110063.jpg" class="d-block w-100"
+                <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_110063.jpg" class="d-block w-100 "
                     alt="...">
             </div>
             <div class="carousel-item">
