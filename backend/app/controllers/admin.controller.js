@@ -26,6 +26,8 @@ exports.loginAdmin = function (req, res, next) {
                 if (same) {
                     console.log("Pass match");
                     req.session.adminId = admin._id
+                    loggedIn = req.session.adminId;
+                    // console.log(loggedIn);
                     // req.session.discountCode = admin.discountCode;
                     console.log(req.session)
                     // next();

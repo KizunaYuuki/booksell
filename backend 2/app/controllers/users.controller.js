@@ -31,12 +31,15 @@ exports.create = async (req, res, next) => {
 exports.checkLogin = async (req, res, next) => {
     try {
         const usersService = new UsersService(MongoDB.client);
-        const document = await usersService.check(req.body);console.log(document);
+        const document = await usersService.check(req.body);
         if (document) {
-            
+
             // Load hash from your password DB.
-            if(bcrypt.compareSync(req.body.password, document.password))
-                return res.send("Login Successful")
+            if (bcrypt.compareSync(req.body.password, document.password)) {
+                loggedIn = document.phone
+                return res.send("Login Successful as: " + loggedIn)
+            }
+
         }
         // return res.send(document);
         return res.send("Password incorrect")
@@ -47,6 +50,28 @@ exports.checkLogin = async (req, res, next) => {
         );
     }
 };
+
+exports.logout = async (req, res, next) => {
+    loggedIn = null
+    res.redirect('/');
+}
+
+// Xác thực đăng nhập, được dùng khi thực hiện hành động cần quyền của người dùng
+exports.authenticationLogin = async (req, res, next) => {
+    try {
+        const usersService = new UsersService(MongoDB.client);
+        const document = await usersService.check(req.body);
+        if (document) {
+            next()
+        } else
+            return res.redirect('/Login')
+    }
+    catch (error) {
+        return next(
+            new ApiError(500, "Err")
+        );
+    }
+}
 
 exports.findAll = async (req, res, next) => {
     let documents = []

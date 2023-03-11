@@ -9,15 +9,19 @@ router.route('/')
     .post(users.create)
     .delete(users.deleteAll);
 
+router.route('/Logout')
+    .get(users.logout)
 
 // Tìm người dùng theo id, cập nhật và xoá người dùng 
 router.route('/:id')
     .get(users.findOne)
-    .put(users.update)
+    .put(users.authenticationLogin, users.update)
     .delete(users.delete);
 
 router.route('/Login')
     .post(users.checkLogin);
+
+
 
 // router.route('/drop/:name').post(users.dropCollection)
 module.exports = router;

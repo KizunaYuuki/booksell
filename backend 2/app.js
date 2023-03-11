@@ -17,6 +17,8 @@ const multer = require('multer')
 const app = express();
 var fs = require('fs');
 
+// Xác thực xem người dùng đã đăng nhập chưa?
+global.loggedIn = null
 
 app.use(cors());
 app.use(express.json());
@@ -72,6 +74,7 @@ app.post('/api/uploads', upload.array('uploadsImg', 3), async function (req, res
 )
 
 app.get("/", (req, res) => {
+    console.log(loggedIn)
     res.json({ message: "Welcome to BooksStore." });
 });
 
