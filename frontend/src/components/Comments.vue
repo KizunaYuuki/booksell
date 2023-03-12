@@ -6,8 +6,8 @@
 
     <!-- Đánh giá sao  -->
     <div class="align-middle px-3" style="display: flex; align-items: flex-start;">
-        <!-- <star-rating class="" :show-rating="false" rating=4 star-size=24 /> -->
-        <span class="m-1 text-muted fs-6">27/12/2022</span>
+        <star-rating :show-rating="false" :increment="0.5" :rating="4" :star-size="24" />
+        <span class="m-1 text-muted fs-6">{{ timeComment }} - {{ dateComment.format("LL") }}</span>
     </div>
 
     <!-- Bình luận  -->
@@ -20,9 +20,23 @@
 
 <script>
 import StarRating from 'vue-star-rating'
+import moment from 'moment';
+import 'moment/dist/locale/vi';
+
 export default {
     components: {
         StarRating
+    },
+    data() {
+        moment.locale("vi");
+        console.log(moment.locales());
+
+        const dateComment = moment().subtract(1, 'days')
+        const timeComment = moment(dateComment).fromNow()
+        return {
+            timeComment,
+            dateComment
+        }
     }
 }
 </script>

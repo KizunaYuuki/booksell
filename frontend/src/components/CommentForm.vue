@@ -3,7 +3,7 @@
 
         <!-- Đánh giá  -->
         <div class="form-group fs-6 mb-2 d-flex justify-content-end">
-            <star-rating class="" :show-rating="false" rating="" star-size="24" />
+            <star-rating :show-rating="false" :increment="0.5" :rating="0" :star-size="24" />
         </div>
 
         <!-- Nội dung bình luận  -->

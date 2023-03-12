@@ -6,17 +6,13 @@ import RegisterUser from './components/RegisterUser.vue';
 import Cart from './components/Cart.vue';
 import Pay from './components/Pay.vue';
 
-
-import Comments from './components/Comments.vue';
-import CommentForm from './components/CommentForm.vue';
 import LoginAdmin from './components/LoginAdmin.vue';
 import Book_Details from './components/Book_Details.vue';
 
-import Test from './components/Test.vue';
-
 </script>
 
-<template style="display:block;">
+<template class="html" style="display:block;">
+  <html>
   <header>
     <HeaderVue />
   </header>
@@ -27,16 +23,25 @@ import Test from './components/Test.vue';
     <!-- <LoginUser /> -->
     <!-- <RegisterUser /> -->
 
-
-    <Comments />
-    <!-- <CommentForm /> -->
     <!-- <Book_Details /> -->
-    <!-- <Test /> -->
-    <!-- <LoginAdmin /> -->
+
+
+    <LoginAdmin />
   </main>
   <footer>
     <FooterVue />
   </footer>
+
+  </html>
 </template>
 
-<style scoped></style>
+<style scoped>
+.html {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(217deg, #fd5588, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #fffefa, rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, #ffb07e, rgba(0, 0, 255, 0) 70.71%);
+}
+</style>

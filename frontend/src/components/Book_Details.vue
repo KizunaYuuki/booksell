@@ -41,7 +41,7 @@
 
                 </div>
                 <div style="display: flex; justify-content: start; align-items: center;">
-                    <div class="px-0 fs-5 mx-3">Số lượng</div>
+                    <div class="px-0 fs-5 me-3">Số lượng</div>
                     <div class="btn-group" role="group" aria-label="Basic outlined">
                         <button type="button" class="btn btn-outline-primary">-</button>
                         <input type="number" pattern="[0-9]*" class="btn border" step="1" min="1"
@@ -50,6 +50,7 @@
                     </div>
                 </div>
 
+                <hr />
                 <div class="py-3">
                     <button class="btn btn-danger">Mua Ngay</button>
                     <span class="px-2"><a class="btn btn-outline-danger">
@@ -83,7 +84,6 @@
 
                 <!-- Bình luận  -->
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
                     <CommentForm />
 
                     <Comments />

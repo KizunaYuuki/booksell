@@ -1,6 +1,6 @@
 <template>
     <!--trigger modal -->
-    <a class="text-primary text-decoration-none px-2" style="cursor: pointer; " data-bs-toggle="modal" data-bs-target="#exampleModal">Xem thêm</a>
+    <a class="text-decoration-none px-2" style="cursor: pointer; " data-bs-toggle="modal" data-bs-target="#exampleModal">Xem thêm</a>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
