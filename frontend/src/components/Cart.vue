@@ -27,9 +27,10 @@
 
                     </a>
                     <small>Khuyến mãi: 1017960497 - Giảm vô thời hạn 10% cho toàn bộ Sách Kim Đồng</small>
-
+                    <small class="d-block">Còn lại: 30</small>
                 </td>
-                <td class="align-middle text-center">36,000₫</td>
+                <td class="align-middle text-center">36,000₫
+                </td>
                 <td class="align-middle text-center">
                     <div class="btn-group" role="group" aria-label="Basic outlined">
                         <button type="button" class="btn btn-outline-primary">-</button>
@@ -37,13 +38,13 @@
                             value="1" max="99" />
                         <button type="button" class="btn btn-outline-primary">+</button>
                     </div>
+                    
                 </td>
                 <td class="align-middle text-center fw-bold">36,000₫</td>
                 <td class="align-middle text-center">
                     <button class="btn btn-outline-light">
                         <img class="" width="20" src="../assets/delete_FILL0_wght400_GRAD0_opsz48.png">
                     </button>
-
                 </td>
             </tr>
 
@@ -63,7 +64,7 @@
 
                     </a>
                     <small>Khuyến mãi: 1017960497 - Giảm vô thời hạn 10% cho toàn bộ Sách Kim Đồng</small>
-
+                    <small class="d-block">Còn lại: 30</small>
                 </td>
                 <td class="align-middle text-center">36,000₫</td>
                 <td class="align-middle text-center">

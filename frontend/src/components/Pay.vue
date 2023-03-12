@@ -126,11 +126,11 @@
                                             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
                                     </div>
                                 </td>
-                                <td class="align-middle" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 4 (Tặng Kèm 1
+                                <td class="align-middle fw-bold" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 4 (Tặng Kèm 1
                                     Trong 2 Mẫu Thẻ Học Sinh)</td>
                                 <td class="align-middle" style="width: 10%;">
-                                    <div class="text-decoration-line-through text-muted">40000đ</div>
-                                    <hr />
+                                    <!-- <div class="text-decoration-line-through text-muted">40000đ</div>
+                                    <hr /> -->
                                     <div class="text-danger fw-bolder">36000đ</div>
                                 </td>
                             </tr>
@@ -144,11 +144,11 @@
                                             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
                                     </div>
                                 </td>
-                                <td class="align-middle" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 10 (Tặng Kèm
+                                <td class="align-middle fw-bold" style="width: 70%;">Kaguya - Cuộc chiến tỏ tình - Tập 10 (Tặng Kèm
                                     1 Trong 2 Clear File)</td>
                                 <td class="align-middle" style="width: 10%;">
-                                    <div class="text-decoration-line-through text-muted">40000đ</div>
-                                    <hr />
+                                    <!-- <div class="text-decoration-line-through text-muted">40000đ</div>
+                                    <hr /> -->
                                     <div class="text-danger fw-bolder">36000đ</div>
                                 </td>
                             </tr>
@@ -174,7 +174,7 @@
 
                 <!-- <hr /> -->
                 <!-- Tạm tính, Phi Ship -->
-                <div class="container">
+                <div class="container px-5">
 
                     <div class="d-flex justify-content-between py-2">
                         <small class="text-muted">Tính tạm</small>
@@ -190,7 +190,7 @@
 
                 <hr />
                 <!-- Tổng tiền -->
-                <div class="container">
+                <div class="container px-5">
 
                     <div class="d-flex justify-content-between">
                         <div class="text-muted fs-6">Tổng tiền</div>

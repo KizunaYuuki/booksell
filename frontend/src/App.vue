@@ -7,7 +7,8 @@ import Cart from './components/Cart.vue';
 import Pay from './components/Pay.vue';
 
 
-
+import Comments from './components/Comments.vue';
+import CommentForm from './components/CommentForm.vue';
 import LoginAdmin from './components/LoginAdmin.vue';
 import Book_Details from './components/Book_Details.vue';
 
@@ -27,8 +28,9 @@ import Test from './components/Test.vue';
     <!-- <RegisterUser /> -->
 
 
-
-    <Book_Details />
+    <Comments />
+    <!-- <CommentForm /> -->
+    <!-- <Book_Details /> -->
     <!-- <Test /> -->
     <!-- <LoginAdmin /> -->
   </main>

@@ -1,5 +1,5 @@
 <template>
-    <Form class="container form py-2" @submit="submitComment" :validation-schema="commentSchema">
+    <Form class="container form my-4 py-2 shadow-sm" @submit="submitComment" :validation-schema="commentSchema">
 
         <!-- Đánh giá  -->
         <div class="form-group fs-6 mb-2 d-flex justify-content-end">
@@ -8,7 +8,7 @@
 
         <!-- Nội dung bình luận  -->
         <div class="form-group form-floating mb-2">
-            <Field class="form-control" v-slot="{ field }" v-model="content" name="content" rules="required">
+            <Field class="form-control" v-slot="{ field }" v-model="commentSchema.content" name="content" rules="required">
                 <textarea v-bind="field" class="form-control" placeholder="Leave a comment here"
                     style="min-height: 60px;"></textarea>
             </Field>
@@ -19,7 +19,7 @@
         <!-- Nút thêm bình luận  -->
         <div class="form-group fs-6 mb-2 d-flex justify-content-end">
             <div class="px-2"><a class="btn btn-outline-primary">Huỷ</a></div>
-            <button type="submit" class="btn btn-primary">Bình luận</button>
+            <button type="submit" class="btn btn-primary text-white">Bình luận</button>
         </div>
     </Form>
 </template>
