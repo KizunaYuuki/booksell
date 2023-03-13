@@ -22,11 +22,12 @@ import Book_Details from './components/Book_Details.vue';
     <!-- <Pay /> -->
     <!-- <LoginUser /> -->
     <!-- <RegisterUser /> -->
+    <!-- <LoginAdmin /> -->
 
     <!-- <Book_Details /> -->
 
 
-    <LoginAdmin />
+
   </main>
   <footer>
     <FooterVue />

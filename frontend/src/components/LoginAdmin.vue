@@ -1,27 +1,26 @@
 <template>
-    <Form class="container form p-4" @submit="submitLogin" :validation-schema="adminSchema">
+    <Form class="container form shadow-sm p-4 border border-info" @submit="submitLogin" :validation-schema="adminSchema">
         <div class="row">
+            <!-- <div class="col"></div> -->
             <div class="col">
 
-                <!-- phone -->
-                <div class="form-group form-floating">
-                    <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại"
-                        v-model="admin.phone" />
-                    <label for="phone">Số điện thoại</label>
-                    <ErrorMessage name="phone" class="error-feedback" />
+                <!-- Đăng nhập  -->
+                <div class="form-group form-floating mb-3 text-center">
+                    <div class="fw-bold fs-6 text-danger py-3">Tên cửa hàng</div>
+                    <div class="fw-bold fs-5">Đăng Nhập</div>
+                    <small>Sử dụng tài khoản người bán</small>
                 </div>
-
-                <br />
+                
                 <!-- name -->
-                <div class="form-group form-floating">
-                    <Field name="adminname" type="text" class="form-control" placeholder="Tên" v-model="admin.adminname" />
-                    <label for="adminname">Tên</label>
-                    <ErrorMessage name="adminname" class="error-feedback" />
+                <hr class="text-danger"/>
+                <div class="form-group form-floating mb-3">
+                    <Field name="name" type="text" class="form-control" placeholder="Tên" v-model="admin.name" />
+                    <label for="name">Tên</label>
+                    <ErrorMessage name="name" class="error-feedback" />
                 </div>
 
-                <br />
                 <!-- password -->
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <div class="input-group">
                         <div class="form-floating">
                             <Field name="password" v-bind:type="showPassword ? 'text' : 'password'" class="form-control"
@@ -34,82 +33,13 @@
                     <ErrorMessage name="password" class="error-feedback" />
                 </div>
 
-                <br />
-                <!-- password confirm -->
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="form-floating">
-                            <Field name="comfirmpassword" type="password" class="form-control"
-                                placeholder="Xác nhận mật khẩu" />
-                            <label for="comfirmpassword">Xác nhận mật khẩu</label>
-                        </div>
-                        <span @click="showPasswordF" class="input-group-text user-select-none">{{
-                            msgShowPassword }}</span>
-                    </div>
-                    <ErrorMessage name="comfirmpassword" class="error-feedback" />
-                </div>
-
-                <br />
-                <!-- city -->
-                <div v-show="true" class="form-group form-floating mb-3">
-                    <select required class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Tỉnh/Thành Phố</option>
-                        <option value="Cần Thơ">Cần Thơ</option>
-                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                        <option value="Vĩnh Long">Vĩnh Long</option>
-                    </select>
-                    <label for="city">Tỉnh/Thành Phố</label>
-                </div>
-
-
-                <!-- district -->
-                <!-- <div class="form-group form-floating mb-3">
-                    <select class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Quận/Huyện</option>
-                        <option value="Phụng Hiệp">Phụng Hiệp</option>
-                        <option value="Châu Thành">Châu Thành</option>
-                    </select>
-                    <label for="district">Quận/Huyện</label>
-                </div> -->
-
-
-                <!-- ward -->
-                <!-- <div class="form-group form-floating mb-3">
-                    <select class="form-select" aria-label="">
-                        <option value="">Hãy chọn một Xã/Phường</option>
-                        <option value="Thạnh Hoà">Thạnh Hoà</option>
-                        <option value="Hoà An">Hoà An</option>
-                    </select>
-                    <label for="ward">Xã/Phường</label>
-                </div> -->
-
-
-                <!-- streetName -->
-                <!-- <div class="form-group form-floating mb-3">
-                    <Field name="streetName" type="text" class="form-control" placeholder="Tên đường" />
-                    <label for="streetName">Tên đường</label>
-                    <ErrorMessage name="streetName" class="error-feedback" />
-                </div> -->
-
-
-                <!-- register -->
-                <!-- <div class="form-group mb-3">
-                    <button type="button" class="btn btn-outline-primary">Đăng ký</button>
-                </div> -->
-
-
-                <br />
                 <!-- login -->
-                <div class="form-group">
-                    <a class="btn text-primary">Đăng nhập</a>
-                    <button type="submit" class="btn btn-primary float-end">Tạo tài khoản</button>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary text-white">Đăng nhập</button>
                 </div>
-
 
             </div>
         </div>
-
-
 
     </Form>
 </template>
@@ -137,28 +67,16 @@ export default {
 
     data() {
         const adminSchema = yup.object().shape({
-            phone: yup
-                .string()
-                // .required("Số điện thoại bắt buộc phải có")
-                .matches(
-                    /((09|03|07|08|05)+([0-9]{8})\b)/g,
-                    "Số điện thoại không hợp lệ."
-                ),
-            adminname: yup
-                .string()
+            name: yup
+                .string(),
                 // .required("Tên bắt buộc phải có")
-                .min(3, "Tên phải có ít nhất 3 ký tự")
-                .max(30, "Tên chứa nhiều nhất 30 ký tự"),
+                // .min(3, "Tên phải có ít nhất 3 ký tự")
+                // .max(30, "Tên chứa nhiều nhất 30 ký tự"),
             password: yup
                 .string()
                 // .required("Mật khẩu bắt buộc phải có")
-                .min(3, "Mật khẩu phải có ít nhất 3 ký tự")
-                .max(24, "Mật khẩu chứa nhiều nhất 30 ký tự"),
-            comfirmpassword: yup
-                .string()
-                // .required('Hãy nhập mật khẩu lần nữa')
-                .oneOf([yup.ref('password')], 'Mật khẩu không trùng khớp.'),
-
+                // .min(3, "Mật khẩu phải có ít nhất 3 ký tự")
+                // .max(24, "Mật khẩu chứa nhiều nhất 30 ký tự"),
         })
         return {
             showPassword: false,

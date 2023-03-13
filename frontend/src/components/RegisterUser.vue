@@ -10,14 +10,14 @@
         <div class="modal-dialog">
             <!-- position-absolute top-50 start-50 translate-middle -->
             <div class="modal-content">
+                
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Đăng Ký Tài khoản người dùng</h5>
-                    <!-- <img alt="Vue logo" class="logo" src="../assets/login_FILL0_wght400_GRAD0_opsz48.svg" width="125" height="125" /> -->
-
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
-                    <Form class="container form" @submit="submitLogin" :validation-schema="userSchema">
+                    <Form class="container form" @submit="submitRegister" :validation-schema="userSchema">
                         <div class="row">
                             <!-- <div class="col"></div> -->
                             <div class="col">
@@ -89,8 +89,8 @@
                                 <!-- login -->
                                 <hr />
                                 <div class="form-group fs-6 mb-2 d-flex justify-content-between">
-                                    <a class="btn btn-outline-primary">Tạo tài khoản</a>
-                                    <button type="submit" class="btn btn-primary text-white">Đăng nhập</button>
+                                    <a class="btn btn-outline-primary">Đăng nhập</a>
+                                    <button type="submit" class="btn btn-primary text-white">Tạo tài khoản</button>
                                 </div>
 
                             </div>
@@ -178,10 +178,10 @@ export default {
             }
 
         },
-        submitLogin() {
+        submitRegister() {
             // this.$emit("submit:user", this.user)
             axios
-                .post('http://localhost:3000/user/auth/login', this.user)
+                .post('#', this.user)
                 .then((response) => console.log(response))
         }
     }

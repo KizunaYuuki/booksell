@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <footer class="py-3 my-4">
+    <footer class="container shadow-sm border border-info">
       <ul class="nav justify-content-center pt-1 m-2">
         <li class="nav-item"><img href="#" class="nav-link px-4 fa-brands fa-twitter" /></li>
         <li class="nav-item"><img href="#" class="nav-link px-4 fa-brands fa-facebook" /></li>
         <li class="nav-item"><img href="#" class="nav-link px-4 fa-brands fa-instagram" /></li>
       </ul>
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <ul class="nav justify-content-center border-bottom border-danger pb-3 mb-3">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Trang chủ</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Tính năng</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Đánh giá</a></li>

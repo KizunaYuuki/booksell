@@ -16,32 +16,38 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <Form class="container form" @submit="submitLogin" :validation-schema="adminSchema">
+                    <Form class="container form" @submit="submitLogin" :validation-schema="userSchema">
                         <div class="row">
                             <!-- <div class="col"></div> -->
                             <div class="col">
 
+                                <!-- phone -->
+                                <div class="form-group form-floating mb-2">
+                                    <Field name="phone" type="text" class="form-control" placeholder="Số điện thoại" />
+                                    <label for="phone">Số điện thoại</label>
+                                    <ErrorMessage name="phone" class="error-feedback" />
+                                </div>
+
+
                                 <!-- name -->
-                                <div class="form-group form-floating mb-3">
-                                    <Field name="adminname" type="text" class="form-control" placeholder="Tên"
-                                        v-model="admin.adminname" />
-                                    <label for="adminname">Tên</label>
-                                    <!-- <p class="fw-lighter">Sử dụng 3 ký tự trở lên, tối đa 30 ký tự</p> -->
-                                    <ErrorMessage name="adminname" class="error-feedback" />
+                                <div class="form-group form-floating mb-2">
+                                    <Field name="name" type="text" class="form-control" placeholder="Tên"
+                                        v-model="user.name" />
+                                    <label class="fs-6" for="name">Tên</label>
+                                    <ErrorMessage name="name" class="error-feedback" />
                                 </div>
 
                                 <!-- password -->
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-2">
                                     <div class="input-group">
                                         <div class="form-floating">
                                             <Field name="password" v-bind:type="showPassword ? 'text' : 'password'"
-                                                class="form-control" placeholder="Mật khẩu" v-model="admin.password" />
-                                            <label for="password">Mật khẩu</label>
+                                                class="form-control" placeholder="Mật khẩu" v-model="user.password" />
+                                            <label class="fs-6" for="password">Mật khẩu</label>
                                         </div>
                                         <!-- Sau khi xử lý summit sẽ đổi thành button  -->
                                         <span @click="showPasswordF" class="input-group-text user-select-none">{{
                                             msgShowPassword }}</span>
-
                                     </div>
                                     <!-- <p class="fw-lighter">Sử dụng 4 ký tự trở lên</p> -->
                                     <ErrorMessage name="password" class="error-feedback" />
@@ -49,14 +55,13 @@
 
                                 <!-- login -->
                                 <hr />
-                                <div class="form-group">
+                                <div class="form-group fs-6 mb-2 d-flex justify-content-between">
                                     <a class="btn btn-outline-primary">Tạo tài khoản</a>
-                                    <button type="submit" class="btn btn-primary text-white float-end">Đăng nhập</button>
+                                    <button type="submit" class="btn btn-primary text-white">Đăng nhập</button>
                                 </div>
 
                             </div>
                         </div>
-
                     </Form>
                 </div>
             </div>
@@ -77,17 +82,19 @@ export default {
         Field,
         ErrorMessage,
     },
-    // emits: ['submit:admin'],
+    // emits: ['submit:user'],
     // props: {
-    //     admin: {
+    //     user: {
     //         type: Object, required: true
     //     }
     // },
 
 
     data() {
-        const adminSchema = yup.object().shape({
-            adminname: yup
+        const userSchema = yup.object().shape({
+            dateOfBirth: yup
+                .date(),
+            name: yup
                 .string()
                 .required("Tên phải bắt buộc phải có")
                 .min(3, "Tên phải có ít nhất 3 ký tự")
@@ -96,16 +103,31 @@ export default {
                 .string()
                 .required("Mật khẩu bắt buộc phải có")
                 .min(3, "Mật khẩu phải có ít nhất 3 ký tự")
-                .max(24, "Mật khẩu chứa nhiều nhất 30 ký tự")
+                .max(24, "Mật khẩu chứa nhiều nhất 30 ký tự"),
+            comfirmpassword: yup
+                .string()
+                .required('Hãy nhập mật khẩu lần nữa')
+                .oneOf([yup.ref('password')], 'Mật khẩu không trùng khớp.'),
+            registerDate: yup
+                .date(),
+            sex: yup
+                .boolean(),
+            phone: yup
+                .string()
+                .required("Số điện thoại bắt buộc phải có")
+                .matches(
+                    /((09|03|07|08|05)+([0-9]{8})\b)/g,
+                    "Số điện thoại không hợp lệ."
+                ),
         })
         return {
             showPassword: false,
             msgShowPassword: 'Hiển thị',
-            admin: {
+            user: {
                 type: Object, required: true
             },
-            adminSchema
-            // admin: this.admin
+            userSchema
+            // user: this.user
         }
     },
 
@@ -123,9 +145,9 @@ export default {
 
         },
         submitLogin() {
-            // this.$emit("submit:admin", this.admin)
+            // this.$emit("submit:user", this.user)
             axios
-                .post('http://localhost:3000/admin/auth/login', this.admin)
+                .post('http://localhost:3000/user/auth/login', this.user)
                 .then((response) => console.log(response))
         }
     }
