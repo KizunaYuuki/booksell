@@ -1,5 +1,5 @@
 <template>
-    <h3 class="text-center" style="padding: 10px;">QUẢN LÝ ĐƠN HÀNG</h3>
+    <h3 class="text-center font-weight-bold" style="padding: 30px; color: #356859;">QUẢN LÝ ĐƠN HÀNG</h3>
     <hr />
     <v-card>
         <v-tabs v-model="tab" centered stacked>
@@ -29,7 +29,7 @@
 
 <script>
 import { useDataStore } from '../stores/dataStores';
-import Order_Confirmation from './Order_Confirmation.vue';
+import Order_Confirmation from '../components/Order_Confirmation.vue';
 export default {
     components: {
         Order_Confirmation

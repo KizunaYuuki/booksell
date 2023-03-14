@@ -1,46 +1,50 @@
 <script >
 import Nav from './components/TheWelcome.vue';
-import Card from './components/Cards.vue'
-import BookDetails from './components/Book_Details.vue'
-import UploadsFile from './components/UploadsFile.vue';
-import Catalog_management from './components/catalog_management.vue';
-import PromotionVue from './components/Promotion.vue';
-import PromotionForm from './components/PromotionForm.vue'
-import Account_Clients from './components/Account_Clients.vue';
-import Book_Receipt from './components/Book_Receipt.vue';
-import Order_Management from './components/Order_Management.vue';
-import Receipt_List from './components/Receipt_List.vue';
-import Product_Management from './components/Product_Management.vue';
-import ChartsVue from './components/Charts.vue';
-import Statistical from './components/Statistical.vue';
+// import Card from './components/Cards.vue'
+// import BookDetails from './components/Book_Details.vue'
+// import UploadsFile from './components/UploadsFile.vue';
+// import Catalog_management from './view/Catalog_Management.vue';
+// import PromotionVue from './view/Promotion_Managemnet.vue';
+// import PromotionForm from './components/PromotionForm.vue'
+// import Account_Clients from './view/Clients_Management.vue';
+// import Book_Receipt from './components/Book_Receipt.vue';
+// import Order_Management from './view/Order_Management.vue';
+// import Receipt_List from './view/Receipt_Management.vue';
+// import Product_Management from './view/Product_Management.vue';
+// import ChartsVue from './components/Charts.vue';
+// import Statistical from './view/Statistical.vue';
+// import TestTime from './components/testTime.vue';
 export default {
-  components: {
-    Nav, Card, BookDetails, UploadsFile, Catalog_management, PromotionVue, Product_Management,
-    PromotionForm, Account_Clients, Book_Receipt, Order_Management, Receipt_List, ChartsVue, Statistical
-  },
+    components: {
+        Nav,
+        // Card, BookDetails, UploadsFile, Catalog_management, PromotionVue, Product_Management,
+        // PromotionForm, Account_Clients, Book_Receipt, Order_Management, Receipt_List, ChartsVue, Statistical, TestTime
+    },
 }
 </script>
 
 
 <template>
-  <div id="app">
-    <Nav></Nav>
-    <div class="container-sm" style="margin-top: 20px; background-color: #FFFBE6 ;">
-      <!-- <Product_Management /> -->
-      <!-- <BookDetails></BookDetails> -->
-      <!-- <UploadsFile /> -->
-      <!-- <Catalog_management /> -->
-      <!-- <PromotionVue /> -->
-      <!-- <PromotionForm /> -->
-      <!-- <Account_Clients /> -->
-      <!-- <Book_Receipt /> -->
-      <!-- <Order_Management /> -->
-      <!-- <Receipt_List /> -->
-      <!-- <ChartsVue /> -->
-      <Statistical />
-    </div>
+    <div id="app">
+        <Nav></Nav>
+        <div class="container-sm" style="margin-top: 20px; background-color: #FFFBE6 ;">
+            <!-- <Product_Management /> -->
+            <!-- <BookDetails></BookDetails> -->
+            <!-- <UploadsFile /> -->
+            <!-- <Catalog_management /> -->
+            <!-- <PromotionVue /> -->
+            <!-- <PromotionForm /> -->
+            <!-- <Account_Clients /> -->
+            <!-- <Book_Receipt /> -->
+            <!-- <Order_Management /> -->
+            <!-- <Receipt_List /> -->
+            <!-- <ChartsVue /> -->
+            <!-- <Statistical /> -->
+            <!-- <TestTime /> -->
+            <router-view />
+        </div>
 
-  </div>
+    </div>
 </template>
 
 <style scoped>

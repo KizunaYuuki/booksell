@@ -1,9 +1,10 @@
 <template>
     <div style="padding: 20px;" class="row">
-        <div class="col-sm-4 text-center d-flex align-center justify-center" style=" margin-bottom: 5px;">
+        <div class="col-sm-3 text-center d-flex align-center justify-center" style=" margin-bottom: 5px;">
             <v-dialog v-model="dialog" width="auto">
                 <template v-slot:activator="{ props }">
-                    <v-btn color="purple-accent-4" v-bind="props" style="width: 0rem;height: fit-content;">
+                    <v-btn color="purple-accent-4" v-bind="props"
+                        style="width: 0rem;height: fit-content; margin-right: 10px;">
                         <svg-icon size="40" type="mdi" :path="path"></svg-icon>
                     </v-btn>
                 </template>
@@ -21,6 +22,15 @@
                                     @click="pillGenes(2, i.name)">{{ i.name }}
                                 </p>
                             </v-col>
+                            <v-col>
+                                <strong type="button" class="gene" style="width: max-content;" @click="">Sách mới</strong>
+                            </v-col>
+                            <v-col>
+                                <strong type="button" class="gene" style="width: max-content;" @click="">Khuyến mãi</strong>
+                            </v-col>
+                            <v-col>
+                                <strong type="button" class="gene" style="width: max-content;" @click="">Hot</strong>
+                            </v-col>
                         </v-row>
                     </v-card-text>
                     <v-card-actions>
@@ -28,9 +38,9 @@
                     </v-card-actions>
                 </v-card>
             </v-dialog>
-            <v-select label="Nhãn" :items="tagList" item-title="name" variant="solo"
+            <!-- <v-select label="Nhãn" :items="tagList" item-title="name" variant="solo"
                 style="margin:0 20px; max-width: 6.5rem;" v-model="selectTag"
-                @update:model-value="upDown_Tag(1)"></v-select>
+                @update:model-value="upDown_Tag(1)"></v-select> -->
             <div v-if="upDown" @click="upDown_Tag(0)" type="button">
                 <strong>Giá:</strong> <i style="font-size: 1.5rem;" class="fas fa-solid fa-arrow-up"></i>
             </div>
@@ -38,9 +48,9 @@
                 <strong>Giá:</strong> <i class="fas fa-solid fa-arrow-down" style="font-size: 1.5rem;"></i>
             </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-9">
             <v-text-field list="datalistOptions" variant="solo" append-inner-icon="mdi-magnify" ref="search"
-                label="Tìm kiếm theo tên sách..." v-model="searchTerm" @input="search"></v-text-field>
+                label="Tìm kiếm theo tên sách..." @input="search"></v-text-field>
             <datalist id="datalistOptions">
                 <option v-for="item in bookList" :key="item.id" :value="item.name"></option>
             </datalist>
@@ -65,10 +75,11 @@
 </template>
 
 <script>
-import Cards from './Cards.vue';
+import Cards from '../components/Cards.vue';
 import { useDataStore } from '../stores/dataStores';
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiApps } from '@mdi/js'
+import moment from 'moment';
 export default {
     components: {
         Cards, SvgIcon
@@ -195,6 +206,49 @@ export default {
                 this.title = v
                 this.flag = 2
             }
+        }
+    },
+    mounted() {
+        var proList = useDataStore().getPromotionList
+        var waitingList = []
+        for (var i of proList) {
+            const now = new Date();
+            if (now > new Date(i.dateEnd)) {
+                console.log("Đã kết thúc")
+            }
+            else if (now < new Date(i.dateBegin)) {
+                console.log("Yet")
+                const dateBegin = moment(i.dateBegin)
+                var duration = moment.duration(dateBegin.diff(now)).asMinutes();
+                if (duration < 30) {
+                    waitingList.push(i)
+                }
+                console.log(duration)
+            }
+            else {
+                for (var id of i.productList) {
+                    useDataStore().updateProBook(id, i.pricePro, i.dateEnd)
+                    console.log(this.bookList.filter(i => i.id == id))
+                }
+            }
+        }
+        console.log(waitingList)
+        if (waitingList.length > 0) {
+            var waiting = setInterval(() => {
+                // console.log(waitingList)
+                for (var i of waitingList) {
+                    const now = moment();
+                    if (now >= new Date(i.dateBegin) && now <= new Date(i.dateEnd)) {
+                        for (var id of i.productList) {
+                            useDataStore().updateProBook(id, i.pricePro, i.dateEnd)
+                        }
+                        waitingList = waitingList.filter(item => item.id !== i.id)
+                    }
+                    if (waitingList.length === 0) {
+                        clearInterval(waiting)
+                    }
+                }
+            }, 1000)
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
-    <div class="container  rounded shadow-sm" style="padding: 30px; border: 1px solid #E6E6E6;">
-        <h3 class="text-center">QUẢN LÝ NHẬP HÀNG</h3>
+    <div class="container " style="padding: 30px; ">
+        <h3 class="text-center font-weight-bold" style="color: #356859;">QUẢN LÝ NHẬP HÀNG</h3>
         <hr />
         <div style=" margin-top: 10px;" class="row">
             <button class="btn btn-outline-primary col-sm-1"

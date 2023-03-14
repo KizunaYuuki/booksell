@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import Vue3Toastify from 'vue3-toastify';
-import Tabs from 'vue3-tabs';
 import 'vue3-toastify/dist/index.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
@@ -14,6 +13,9 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
+import router from "./routers";
+
+
 
 const vuetify = createVuetify({
     components,
@@ -23,6 +25,6 @@ const vuetify = createVuetify({
 
 const app = createApp(App)
 
-app.use(createPinia()).use(Vue3Toastify).use(Tabs).use(vuetify)
+app.use(createPinia()).use(Vue3Toastify).use(vuetify).use(router)
 
 app.mount('#app')

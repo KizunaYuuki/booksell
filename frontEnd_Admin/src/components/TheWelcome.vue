@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">BookStore</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -13,10 +13,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link :to="{ name: 'Products' }" class="nav-link"> Sản Phẩm
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <router-link :to="{ name: 'Orders' }" class="nav-link"> Đơn Hàng
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'Clients' }" class="nav-link"> Người Dùng
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'Catalog' }" class="nav-link"> Danh Mục
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'Promotion' }" class="nav-link"> Khuyến Mãi
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'Receipts' }" class="nav-link"> Nhập Hàng
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" style="font-size: larger;">Thống kê</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,14 +52,7 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>

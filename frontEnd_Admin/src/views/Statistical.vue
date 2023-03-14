@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Inventory_Statistics from './Inventory_Statistics.vue';
+import Inventory_Statistics from '../components/Inventory_Statistics.vue';
 export default {
     components: {
         Inventory_Statistics

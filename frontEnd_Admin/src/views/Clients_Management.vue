@@ -1,6 +1,6 @@
 <template>
     <div class="container " style="padding: 30px; ">
-        <h3 class="text-center" style="color: #356859;">QUẢN LÝ TÀI KHOẢN KHÁCH HÀNG</h3>
+        <h3 class="text-center font-weight-bold" style="color: #356859;">QUẢN LÝ TÀI KHOẢN KHÁCH HÀNG</h3>
         <hr />
         <div style="padding: 15px; " class="row">
             <div class="col-sm-8">

@@ -1,6 +1,6 @@
 <template>
-    <div class="container border shadow-sm">
-        <h3 class="text-center" style="padding: 10px;">CHƯƠNG TRÌNH KHUYẾN MÃI</h3>
+    <div class="container">
+        <h3 class="text-center font-weight-bold" style="padding: 30px;color: #356859;">CHƯƠNG TRÌNH KHUYẾN MÃI</h3>
         <hr />
         <button type="button" class="btn btn-outline-primary" data-bs-whatever="@getbootstrap">Thêm khuyến mãi<i
                 class="fas fa-solid fa-plus"></i></button>
