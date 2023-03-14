@@ -12,7 +12,6 @@ import Book_Details from './components/Book_Details.vue';
 </script>
 
 <template class="html" style="display:block;">
-  <html>
   <header>
     <HeaderVue />
   </header>
@@ -20,8 +19,8 @@ import Book_Details from './components/Book_Details.vue';
   <main>
     <!-- <Cart /> -->
     <!-- <Pay /> -->
-    <!-- <LoginUser /> -->
-    <!-- <RegisterUser /> -->
+    <LoginUser />
+    <RegisterUser />
     <!-- <LoginAdmin /> -->
 
     <!-- <Book_Details /> -->
@@ -32,8 +31,6 @@ import Book_Details from './components/Book_Details.vue';
   <footer>
     <FooterVue />
   </footer>
-
-  </html>
 </template>
 
 <style scoped>
