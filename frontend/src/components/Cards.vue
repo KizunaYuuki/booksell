@@ -30,7 +30,7 @@
                         }) }}</h6>
 
                     </div>
-                    <testTime :time="book.promotionTime" @messageSent="handleMessage" />
+                    <!-- <testTime :time="book.promotionTime" @messageSent="handleMessage" /> -->
                 </div>
                 <div v-else>
                     <h4 style="font-weight: 700; color: red;">{{ book.price.toLocaleString('vi-VN', {
@@ -57,11 +57,12 @@
 import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/vue';
 import moment from 'moment';
 import { useDataStore } from "../stores/dataStores";
-import testTime from '../components/testTime.vue'
+// import testTime from '../components/testTime.vue'
 import { Countdown } from 'vue3-flip-countdown'
 export default {
     components: {
-        CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton, testTime, Countdown
+        // CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton, testTime, Countdown
+        CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton, Countdown
     },
     data() {
         return {

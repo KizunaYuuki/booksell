@@ -10,7 +10,7 @@ import LoginAdmin from './components/LoginAdmin.vue';
 // Làm chung
 import Book_Details from './components/Book_Details.vue';
 
-// import HomePage from './components/HomePage.vue';
+import HomePage from './components/HomePage.vue';
 
 </script>
 
@@ -26,7 +26,7 @@ import Book_Details from './components/Book_Details.vue';
         <RegisterUser />
         <!-- <LoginAdmin /> -->
 
-        <!-- <HomePage /> -->
+        <HomePage />
 
         <!-- <Book_Details /> -->
     </main>
