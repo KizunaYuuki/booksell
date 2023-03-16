@@ -98,8 +98,8 @@
 
 
                         <!-- Nút Giỏ hàng và Chọn phương thức thanh toán -->
-                        <div class="d-flex justify-content-end">
-                            <!-- <a class="btn btn-outline-primary">Giỏ hàng</a> -->
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-outline-primary">Giỏ hàng</a>
                             <button class="btn btn-primary">Đặt hàng</button>
                         </div>
 
@@ -135,10 +135,7 @@
                                 <td class="align-middle" style="width: 10%;">
                                     <!-- <div class="text-decoration-line-through text-muted">40000đ</div>
                                     <hr /> -->
-                                    <div class="text-danger fw-bolder">{{ (36000).toLocaleString('vi-VN', {
-                                        style: 'currency',
-                                        currency: 'VND'
-                                    }) }}</div>
+                                    <div class="text-danger fw-bolder">36000đ</div>
                                 </td>
                             </tr>
 
@@ -157,10 +154,7 @@
                                 <td class="align-middle" style="width: 10%;">
                                     <!-- <div class="text-decoration-line-through text-muted">40000đ</div>
                                     <hr /> -->
-                                    <div class="text-danger fw-bolder">{{ (36000).toLocaleString('vi-VN', {
-                                        style: 'currency',
-                                        currency: 'VND'
-                                    }) }}</div>
+                                    <div class="text-danger fw-bolder">36000đ</div>
                                 </td>
                             </tr>
 
@@ -189,17 +183,11 @@
 
                     <div class="d-flex justify-content-between py-2">
                         <small class="text-muted">Tính tạm</small>
-                        <small class="">{{ (72000).toLocaleString('vi-VN', {
-                            style: 'currency',
-                            currency: 'VND'
-                        }) }}</small>
+                        <small class="">72000đ</small>
                     </div>
                     <div class="d-flex justify-content-between">
                         <small class="text-muted">Phí Ship</small>
-                        <small class="">{{ (30000).toLocaleString('vi-VN', {
-                            style: 'currency',
-                            currency: 'VND'
-                        }) }}</small>
+                        <small class="">30000đ</small>
                     </div>
 
                 </div>
@@ -211,10 +199,7 @@
 
                     <div class="d-flex justify-content-between">
                         <div class="text-muted fs-6">Tổng tiền</div>
-                        <div class="fw-bolder">{{ (102000).toLocaleString('vi-VN', {
-                            style: 'currency',
-                            currency: 'VND'
-                        }) }}</div>
+                        <div class="fw-bolder">102000đ</div>
                     </div>
 
                 </div>

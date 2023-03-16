@@ -16,11 +16,12 @@ import Nav from './components/TheWelcome.vue';
 // import TestTime from './components/testTime.vue';
 
 import HomePage from './views/HomePage.vue';
+import HeaderVue from './components/Header.vue';
 import FooterVue from './components/Footer.vue';
 export default {
     components: {
         Nav,
-
+        HeaderVue,
         HomePage,
         FooterVue,
         // Card, BookDetails, UploadsFile, Catalog_management, PromotionVue, Product_Management,
@@ -32,28 +33,27 @@ export default {
 
 <template>
     <div id="app">
-        <Nav></Nav>
-        <div class="container-sm" style="background-color: #FFFBE6 ;">
-            <!-- <Product_Management /> -->
-            <!-- <BookDetails></BookDetails> -->
-            <!-- <UploadsFile /> -->
-            <!-- <Catalog_management /> -->
-            <!-- <PromotionVue /> -->
-            <!-- <PromotionForm /> -->
-            <!-- <Account_Clients /> -->
-            <!-- <Book_Receipt /> -->
-            <!-- <Order_Management /> -->
-            <!-- <Receipt_List /> -->
-            <!-- <ChartsVue /> -->
-            <!-- <Statistical /> -->
-            <!-- <TestTime /> -->
-
-            <!-- <router-view /> -->
-        </div>
+        <!-- <Nav></Nav> -->
+        <!-- <div class="container-sm" style="background-color: #FFFBE6 ;"> -->
+        <!-- <Product_Management /> -->
+        <!-- <BookDetails></BookDetails> -->
+        <!-- <UploadsFile /> -->
+        <!-- <Catalog_management /> -->
+        <!-- <PromotionVue /> -->
+        <!-- <PromotionForm /> -->
+        <!-- <Account_Clients /> -->
+        <!-- <Book_Receipt /> -->
+        <!-- <Order_Management /> -->
+        <!-- <Receipt_List /> -->
+        <!-- <ChartsVue /> -->
+        <!-- <Statistical /> -->
+        <!-- <TestTime /> -->
+        <!-- <router-view /> -->
+        <!-- </div> -->
 
         <div class="bg-light">
             <header>
-
+                <HeaderVue />
             </header>
             <main>
                 <!-- <HomePage /> -->

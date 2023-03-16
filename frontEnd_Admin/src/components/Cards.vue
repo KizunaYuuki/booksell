@@ -1,25 +1,27 @@
 <template>
     <v-hover v-slot="{ isHovering, props }" open-delay="200">
         <v-tooltip :text="book.name"></v-tooltip>
-        <v-card class="mx-auto" width="17rem" :elevation="isHovering ? 16 : 2" :class="{ 'on-hover': isHovering }"
+        <v-card class="mx-auto" width="14rem" :elevation="isHovering ? 16 : 2" :class="{ 'on-hover': isHovering }"
             v-bind="props">
+
             <span class="badge text-bg-danger text-uppercase"
                 style="position: absolute;z-index: 2;  margin: 5px; max-height: 30px;">
                 <h6 v-if="book.price !== book.originalPrice">Sale</h6>
                 <h6 v-else-if="!checkMonth(book.receiptDate)">New</h6>
                 <!-- <h6>Hot</h6> -->
             </span>
-            <v-img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935244878882.jpg" cover>
-            </v-img>
 
-            <v-card-title style="text-overflow: ellipsis;">{{ book.name }}</v-card-title>
+            <v-img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935244878882.jpg" cover></v-img>
+
+            <v-card-title class="py-2" style="text-overflow: ellipsis;">{{ book.name }}</v-card-title>
+
             <v-card-subtitle class="">
-                <p><span>0</span> đánh giá</p>
-
+                <span>0 đánh giá</span>
             </v-card-subtitle>
-            <v-card-text>
+
+            <v-card-text class="py-3">
                 <div v-if="book.originalPrice !== book.price">
-                    <div class="card-text" style=" display: flex;align-items: center; ">
+                    <div class="card-text" style=" display: flex;align-items: center;">
                         <h4 style="font-weight: 700;color: orange; ">{{ book.price.toLocaleString('vi-VN', {
                             style: 'currency', currency:
                                 'VND'
@@ -33,14 +35,14 @@
                     <testTime :time="book.promotionTime" @messageSent="handleMessage" />
                 </div>
                 <div v-else>
-                    <h4 style="font-weight: 700; color: red;">{{ book.price.toLocaleString('vi-VN', {
-                        style: 'currency', currency:
-                            'VND'
+                    <h4 class="fw-bold mb-0" style="color: red;">{{ book.price.toLocaleString('vi-VN', {
+                        style: 'currency',
+                        currency: 'VND'
                     }) }}</h4>
                 </div>
-
             </v-card-text>
-            <v-card-actions>
+
+            <!-- <v-card-actions>
                 <v-btn color="orange">
                     Chỉnh sửa
                 </v-btn>
@@ -48,21 +50,19 @@
                 <v-btn color="red">
                     Xóa
                 </v-btn>
-            </v-card-actions>
+            </v-card-actions> -->
         </v-card>
     </v-hover>
 </template>
 
 <script>
-import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/vue';
+
 import moment from 'moment';
 import { useDataStore } from "../stores/dataStores";
 import testTime from '../components/testTime.vue'
 import { Countdown } from 'vue3-flip-countdown'
 export default {
-    components: {
-        CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton, testTime, Countdown
-    },
+
     data() {
         return {
             time: moment(new Date(), "YYYY-MM-DD HH:mm:ss")
