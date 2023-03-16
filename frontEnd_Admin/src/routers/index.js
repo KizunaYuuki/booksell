@@ -22,6 +22,13 @@ const routes = [
         component: () => import("@/views/Pay.vue"),
         // props: true
     },
+    {
+        path: "/Admin/Login",
+        name: "LoginAdmin",
+        component: () => import("@/views/LoginAdmin.vue"),
+        // props: true
+    },
+
 
 
 
