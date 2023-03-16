@@ -16,10 +16,13 @@ import Nav from './components/TheWelcome.vue';
 // import TestTime from './components/testTime.vue';
 
 import HomePage from './views/HomePage.vue';
+import FooterVue from './components/Footer.vue';
 export default {
     components: {
         Nav,
-        HomePage
+
+        HomePage,
+        FooterVue,
         // Card, BookDetails, UploadsFile, Catalog_management, PromotionVue, Product_Management,
         // PromotionForm, Account_Clients, Book_Receipt, Order_Management, Receipt_List, ChartsVue, Statistical, TestTime
     },
@@ -30,28 +33,37 @@ export default {
 <template>
     <div id="app">
         <Nav></Nav>
-        <div class="container-sm" style="margin-top: 20px; background-color: #FFFBE6 ;">
-            <!-- <Product_Management />
-                        <BookDetails></BookDetails>
-                        <UploadsFile />
-                        <Catalog_management />
-                        <PromotionVue />
-                        <PromotionForm />
-                        <Account_Clients />
-                        <Book_Receipt />
-                        <Order_Management />
-                        <Receipt_List />
-                        <ChartsVue />
-                        <Statistical />
-                        <TestTime /> -->
+        <div class="container-sm" style="background-color: #FFFBE6 ;">
+            <!-- <Product_Management /> -->
+            <!-- <BookDetails></BookDetails> -->
+            <!-- <UploadsFile /> -->
+            <!-- <Catalog_management /> -->
+            <!-- <PromotionVue /> -->
+            <!-- <PromotionForm /> -->
+            <!-- <Account_Clients /> -->
+            <!-- <Book_Receipt /> -->
+            <!-- <Order_Management /> -->
+            <!-- <Receipt_List /> -->
+            <!-- <ChartsVue /> -->
+            <!-- <Statistical /> -->
+            <!-- <TestTime /> -->
 
-            <router-view />
+            <!-- <router-view /> -->
         </div>
 
         <div class="bg-light">
-            <HomePage />
-        </div>
+            <header>
 
+            </header>
+            <main>
+                <!-- <HomePage /> -->
+                <router-view class="bg-light" style="background-color: #FFFBE6;" />
+            </main>
+
+            <footer>
+                <FooterVue />
+            </footer>
+        </div>
 
     </div>
 </template>

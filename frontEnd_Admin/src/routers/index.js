@@ -3,6 +3,28 @@ import { createWebHistory, createRouter } from "vue-router";
 // import store from "../store/store"
 
 const routes = [
+
+    {
+        path: "/",
+        name: "HomePage",
+        component: () => import("@/views/HomePage.vue"),
+        // props: true
+    },
+    {
+        path: "/Cart",
+        name: "Cart",
+        component: () => import("@/views/Cart.vue"),
+        // props: true
+    },
+    {
+        path: "/Pay",
+        name: "Pay",
+        component: () => import("@/views/Pay.vue"),
+        // props: true
+    },
+
+
+
     {
         path: "/Products",
         name: "Products",
