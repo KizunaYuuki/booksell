@@ -2,7 +2,7 @@
 import Cards from './Cards.vue';
 </script>
 <template>
-    <div class="container">
+    <div class="container bg-light">
         <!-- <Cards /> -->
 
         <!-- Carousel - Hiển thị những sản phẩm đặt biệt hoặc một chương trình giảm giá...  -->

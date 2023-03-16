@@ -1,76 +1,109 @@
 <template>
-    <div style="padding: 20px;" class="row">
-        <div class="col-sm-3 text-center d-flex align-center justify-center" style=" margin-bottom: 5px;">
-            <v-dialog v-model="dialog" width="auto">
-                <template v-slot:activator="{ props }">
-                    <v-btn color="purple-accent-4" v-bind="props"
-                        style="width: 0rem;height: fit-content; margin-right: 10px;">
-                        <svg-icon size="40" type="mdi" :path="path"></svg-icon>
-                    </v-btn>
-                </template>
+    <div class="container">
+        <!-- <Cards /> -->
 
-                <v-card>
-                    <v-card-title>
-                        Danh mục sách
-                    </v-card-title>
-                    <v-card-text>
-                        <h5 class="gene" @click="pillGenes(0)" type="button">Tất cả</h5>
-                        <v-row>
-                            <v-col v-for="item in geneList" :key="item.id">
-                                <strong type="button" class="gene" @click="pillGenes(1, item.name)">{{ item.name }}</strong>
-                                <p type="button" v-for="i in item.sub" :key="i.id" class="gene"
-                                    @click="pillGenes(2, i.name)">{{ i.name }}
-                                </p>
-                            </v-col>
-                            <v-col>
-                                <strong type="button" class="gene" style="width: max-content;" @click="">Sách mới</strong>
-                            </v-col>
-                            <v-col>
-                                <strong type="button" class="gene" style="width: max-content;" @click="">Khuyến mãi</strong>
-                            </v-col>
-                            <v-col>
-                                <strong type="button" class="gene" style="width: max-content;" @click="">Hot</strong>
-                            </v-col>
-                        </v-row>
-                    </v-card-text>
-                    <v-card-actions>
-                        <v-btn color="primary" block @click="dialog = false">Close</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </v-dialog>
-            <!-- <v-select label="Nhãn" :items="tagList" item-title="name" variant="solo"
-                style="margin:0 20px; max-width: 6.5rem;" v-model="selectTag"
-                @update:model-value="upDown_Tag(1)"></v-select> -->
-            <div v-if="upDown" @click="upDown_Tag(0)" type="button">
-                <strong>Giá:</strong> <i style="font-size: 1.5rem;" class="fas fa-solid fa-arrow-up"></i>
+        <!-- Carousel - Hiển thị những sản phẩm đặt biệt hoặc một chương trình giảm giá...  -->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div v-else @click="upDown_Tag(0)" type="button">
-                <strong>Giá:</strong> <i class="fas fa-solid fa-arrow-down" style="font-size: 1.5rem;"></i>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="https://theme.hstatic.net/200000343865/1000938429/14/ms_banner_img4.jpg?v=335"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://theme.hstatic.net/200000343865/1000938429/14/ms_banner_img4.jpg?v=335"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://theme.hstatic.net/200000343865/1000938429/14/ms_banner_img4.jpg?v=335"
+                        class="d-block w-100" alt="...">
+                </div>
             </div>
-        </div>
-        <div class="col-sm-9">
-            <v-text-field list="datalistOptions" variant="solo" append-inner-icon="mdi-magnify" ref="search"
-                label="Tìm kiếm theo tên sách..." @input="search"></v-text-field>
-            <datalist id="datalistOptions">
-                <option v-for="item in bookList" :key="item.id" :value="item.name"></option>
-            </datalist>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon btn btn-danger" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon btn btn-danger" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
-    </div>
-    <div>
-        <h5 style="text-transform: uppercase; margin-left: 2rem;">{{ title }}</h5>
-        <hr style="margin-top: -5px;">
-    </div>
-    <!-- style="display: flex; flex-wrap: wrap; justify-content: center; margin: 0 auto;" -->
-    <div class="">
-        <v-row :equal="{ sm: true, md: false }">
-            <v-col v-for="item in bookList" :key="item.id" class="d-flex align-center justify-center">
-                <Cards :book="item" />
-            </v-col>
-        </v-row>
-        <!-- <div v-for="item in bookList" :key="item.id" style="margin: 15px 5px; width: 17rem;">
-            
-        </div> -->
+        <!-- Các thành phần - nội dung chính trong trang   -->
+        <div id="content">
+            <div class="p-2 fw-semibold fs-5 text-center">
+                <a href="#flash-sale" class="text-danger text-decoration-none px-2 btn">Flash Sale</a>
+                <a href="#hot" class="text-danger text-decoration-none px-2 btn">Sản Phẩm HOT</a>
+                <a href="#new" class="text-danger text-decoration-none px-2 btn">Sản Phẩm Mới</a>
+                <a href="#product" class="text-danger text-decoration-none px-2 btn">Sản Phẩm</a>
+            </div>
+        </div>
+
+        <!-- FLASH SALE -->
+        <div id="flash-sale">
+            <div class="p-2 fw-semibold fs-5" style="background-color: #fcdab0;">
+                <a href="#" class="text-dark text-decoration-none">Flash Sale | <small>Kết Thúc Trong {{ }}</small></a>
+            </div>
+            <div class="container-fluid px-0 py-2">
+                <v-row class="p-2 m-0" :equal="{ sm: true, md: false }">
+                    <v-col v-for="item in bookList" :key="item.id" class="d-flex align-center justify-center">
+                        <Cards :book="item" />
+                    </v-col>
+                </v-row>
+            </div>
+        </div>
+
+        <!--Sản phẩm HOT -->
+        <div id="hot">
+            <div class="p-2 fw-semibold fs-5" style="background-color: #eb0200;">
+                <a href="#" class="text-white text-decoration-none">Sản Phẩm HOT</a>
+            </div>
+            <div class="container-fluid px-0 py-2">
+                <v-row class="p-2 m-0" :equal="{ sm: true, md: false }">
+                    <v-col v-for="item in bookList" :key="item.id" class="d-flex align-center justify-center">
+                        <Cards :book="item" />
+                    </v-col>
+                </v-row>
+            </div>
+        </div>
+
+        <!-- Sản phẩm mới - New  -->
+        <div id="new">
+            <div class="p-2 fw-semibold fs-5" style="background-color:  #e7f0fe;">
+                <a href="#" class="text-dark text-decoration-none">Sản Phẩm Mới</a>
+            </div>
+            <div class="container-fluid px-0 py-2">
+                <v-row class="p-2 m-0" :equal="{ sm: true, md: false }">
+                    <v-col v-for="item in bookList" :key="item.id" class="d-flex align-center justify-center">
+                        <Cards :book="item" />
+                    </v-col>
+                </v-row>
+            </div>
+        </div>
+
+        <!-- Sản phẩm -->
+        <div id="product">
+            <div class="p-2 fw-semibold fs-5" style="background-color:  #e7f0fe;">
+                <a href="#" class="text-dark text-decoration-none">Sản Phẩm</a>
+            </div>
+            <div class="container-fluid px-0 py-2">
+                <v-row class="p-2 m-0" :equal="{ sm: true, md: false }">
+                    <v-col v-for="item in bookList" :key="item.id" class="d-flex align-center justify-center">
+                        <Cards :book="item" />
+                    </v-col>
+                </v-row>
+            </div>
+        </div>
+
     </div>
 </template>
 

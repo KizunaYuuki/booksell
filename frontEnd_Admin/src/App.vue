@@ -14,9 +14,12 @@ import Nav from './components/TheWelcome.vue';
 // import ChartsVue from './components/Charts.vue';
 // import Statistical from './view/Statistical.vue';
 // import TestTime from './components/testTime.vue';
+
+import HomePage from './views/HomePage.vue';
 export default {
     components: {
         Nav,
+        HomePage
         // Card, BookDetails, UploadsFile, Catalog_management, PromotionVue, Product_Management,
         // PromotionForm, Account_Clients, Book_Receipt, Order_Management, Receipt_List, ChartsVue, Statistical, TestTime
     },
@@ -28,21 +31,27 @@ export default {
     <div id="app">
         <Nav></Nav>
         <div class="container-sm" style="margin-top: 20px; background-color: #FFFBE6 ;">
-            <!-- <Product_Management /> -->
-            <!-- <BookDetails></BookDetails> -->
-            <!-- <UploadsFile /> -->
-            <!-- <Catalog_management /> -->
-            <!-- <PromotionVue /> -->
-            <!-- <PromotionForm /> -->
-            <!-- <Account_Clients /> -->
-            <!-- <Book_Receipt /> -->
-            <!-- <Order_Management /> -->
-            <!-- <Receipt_List /> -->
-            <!-- <ChartsVue /> -->
-            <!-- <Statistical /> -->
-            <!-- <TestTime /> -->
+            <!-- <Product_Management />
+                        <BookDetails></BookDetails>
+                        <UploadsFile />
+                        <Catalog_management />
+                        <PromotionVue />
+                        <PromotionForm />
+                        <Account_Clients />
+                        <Book_Receipt />
+                        <Order_Management />
+                        <Receipt_List />
+                        <ChartsVue />
+                        <Statistical />
+                        <TestTime /> -->
+
             <router-view />
         </div>
+
+        <div class="bg-light">
+            <HomePage />
+        </div>
+
 
     </div>
 </template>
